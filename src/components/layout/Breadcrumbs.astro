@@ -1,23 +1,34 @@
 ---
 import linksData from '@/data/links.json';
 
+const base = import.meta.env.BASE_URL;
+
 const currentPath = Astro.url.pathname;
+const cleanPath = currentPath.replace(base, '').replace(/\/+$/, '') || '/';
+
 const allLinks = [...linksData.main, ...linksData.services];
 
 function findPageInfo(url: string) {
   return allLinks.find((link) => link.url === url);
 }
 
+const getUrl = (url: string) => {
+  if (!url) return null;
+  if (url === '/') return base;
+  return `${base}/${url.startsWith('/') ? url.slice(1) : url}`;
+};
+
 const breadcrumbs = [];
 breadcrumbs.push({ title: 'Home', url: '/' });
-const pathSegments = currentPath.split('/').filter((s) => s);
+
+const pathSegments = cleanPath.split('/').filter((s) => s);
 
 if (pathSegments[0] === 'services' && pathSegments.length > 1) {
   breadcrumbs.push({ title: 'Our Services', url: '/services' });
 }
 
-if (currentPath !== '/') {
-  const currentPage = findPageInfo(currentPath);
+if (cleanPath !== '/') {
+  const currentPage = findPageInfo(cleanPath);
   if (currentPage) {
     breadcrumbs.push({ title: currentPage.title, url: null });
   }
@@ -35,7 +46,7 @@ if (currentPath !== '/') {
             <li class="breadcrumbs-item">
               {!isLast && crumb.url ? (
                 <>
-                  <a href={crumb.url}>{crumb.title}</a>
+                  <a href={getUrl(crumb.url)}>{crumb.title}</a>
                   <span class="breadcrumbs-separator">›</span>
                 </>
               ) : (
