@@ -1,0 +1,66 @@
+{
+  "seo": {
+    "title": "Uplevel Restoration - 24/7 Emergency Property Restoration in Saskatoon",
+    "description": "24/7 emergency property restoration in Saskatoon. Water damage, fire damage, smoke damage, mold remediation. Insurance-focused restoration services. Call now!",
+    "keywords": "emergency restoration Saskatoon, water damage restoration, fire damage restoration, mold remediation, property restoration, disaster recovery, 24/7 emergency response",
+    "ogTitle": "Uplevel Restoration - 24/7 Emergency Property Restoration",
+    "ogDescription": "24/7 emergency property restoration in Saskatoon. Water damage, fire damage, mold remediation. Insurance-focused restoration services.",
+    "ogType": "website",
+    "ogUrl": "https://uplevel-restoration.netlify.app/",
+    "ogImage": "https://uplevel-restoration.netlify.app/assets/images/logo.png"
+  },
+  "hero": {
+    "title": "When Disaster Strikes,<br />We're Ready",
+    "subtitle": "At Uplevel Restoration, we specialize in emergency property restoration following water, fire, smoke, and mold losses. Our trained team responds 24/7 to mitigate damage, protect your property, and guide you through the insurance process. From initial emergency response and contents handling to full reconstruction, we focus on doing the job right — safely, efficiently, and in accordance with industry standards.",
+    "backgroundImage": "home",
+    "showCta": true
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Uplevel Restoration?",
+    "subtitle": "Trusted Emergency Response • Insurance-Focused • 24/7 Availability",
+    "features": [
+      {
+        "id": "emergency",
+        "backgroundImage": "emergency-response",
+        "icon": "⚡",
+        "title": "24/7 Emergency Response",
+        "description": "We respond quickly to water, fire, smoke, and mold losses to prevent further damage and stabilize your property as soon as possible."
+      },
+      {
+        "id": "insurance",
+        "backgroundImage": "insurance-process",
+        "icon": "📋",
+        "title": "Insurance-Focused Process",
+        "description": "We work alongside homeowners and insurance providers, documenting damage properly and helping move the claim forward efficiently and professionally."
+      },
+      {
+        "id": "standards",
+        "backgroundImage": "industry-standards",
+        "icon": "✅",
+        "title": "Industry-Standard Mitigation",
+        "description": "Our work follows established industry standards to ensure proper drying, cleaning, and remediation before repairs begin."
+      },
+      {
+        "id": "reconstruction",
+        "backgroundImage": "reconstruction",
+        "icon": "🔄",
+        "title": "From Mitigation to Reconstruction",
+        "description": "From emergency response and contents handling to post-loss reconstruction, we manage the entire restoration process to help you return to normal faster."
+      },
+      {
+        "id": "contents",
+        "backgroundImage": "contents-handling",
+        "icon": "📦",
+        "title": "Contents Handling & Pack-Outs",
+        "description": "When required, we carefully inventory, pack, store, and return your belongings to protect them during restoration work."
+      },
+      {
+        "id": "communication",
+        "backgroundImage": "communication",
+        "icon": "💬",
+        "title": "Clear Communication & Control",
+        "description": "We keep homeowners informed at every stage, explaining what's happening, what comes next, and what to expect throughout the restoration process."
+      }
+    ]
+  }
+}

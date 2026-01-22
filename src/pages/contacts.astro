@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import ContactsSection from '@/components/sections/ContactsSection.astro';
+import pageContent from '@/data/contacts.json';
+---
+
+<BaseLayout seoData={pageContent.seo}>
+  <Hero data={pageContent.hero} />
+  <ContactsSection data={pageContent.contacts} />
+</BaseLayout>

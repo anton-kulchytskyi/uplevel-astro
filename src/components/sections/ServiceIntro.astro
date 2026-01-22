@@ -1,0 +1,64 @@
+---
+// src/components/sections/ServiceIntro.astro
+
+export interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="service-intro">
+  <p>{text}</p>
+</div>
+
+<style>
+  .service-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-intro p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .service-intro {
+      margin-bottom: 40px;
+    }
+
+    .service-intro p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-intro {
+      animation: simpleFadeIn 0.5s ease forwards;
+      transform: none;
+    }
+
+    @keyframes simpleFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+</style>

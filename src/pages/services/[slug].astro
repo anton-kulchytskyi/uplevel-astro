@@ -1,0 +1,16 @@
+---
+// src/pages/services/[slug].astro
+import ServicePageLayout from '@/layouts/ServicePageLayout.astro';
+import servicePages from '@/data/service-pages.json';
+
+export async function getStaticPaths() {
+  return Object.keys(servicePages).map((slug) => ({
+    params: { slug },
+    props: { pageData: servicePages[slug as keyof typeof servicePages] },
+  }));
+}
+
+const { pageData } = Astro.props;
+---
+
+<ServicePageLayout pageData={pageData} />

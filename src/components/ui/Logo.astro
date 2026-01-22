@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import logo from '@/assets/images/logo.png';
+---
+
+<a href="/" class="logo">
+  <Image
+    src={logo}
+    alt="Uplevel Restoration Logo"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  />
+</a>
+
+<style>
+  .logo {
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(15, 63, 143, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .logo:hover::before {
+    left: 100%;
+  }
+
+  .logo img {
+    height: 90px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 900px) {
+    .logo img {
+      height: 60px;
+      max-width: 150px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .logo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .logo img {
+      height: 50px;
+      max-width: 140px;
+    }
+  }
+</style>

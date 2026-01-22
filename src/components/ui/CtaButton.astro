@@ -1,0 +1,76 @@
+---
+// src/components/ui/CtaButton.astro
+import content from '@/data/content.json';
+
+export interface Props {
+  secondary?: boolean;
+  text?: string;
+  href?: string;
+}
+
+const {
+  secondary = false,
+  text = content.cta.text,
+  href = content.cta.link,
+} = Astro.props;
+---
+
+<a href={href} class:list={['cta', { 'cta--secondary': secondary }]}>
+  {text}
+</a>
+
+<style>
+  .cta {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+  }
+
+  .cta:hover {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Secondary стиль */
+  .cta--secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+  }
+
+  .cta--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-white);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .cta {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import FeatureCard from '@/components/ui/FeatureCard.astro';
+import cardContent from '@/data/home.json';
+---
+
+<section class="why-choose-us">
+  <div class="section-header">
+    <h2 class="section-title">{cardContent.whyChooseUs.title}</h2>
+    <p class="section-subtitle">
+      {cardContent.whyChooseUs.subtitle}
+    </p>
+  </div>
+  <div class="features-grid">
+    {
+      cardContent.whyChooseUs.features.map(
+        ({ title, description, icon, backgroundImage }) => (
+          <FeatureCard
+            title={title}
+            description={description}
+            icon={icon}
+            backgroundImage={backgroundImage}
+          />
+        )
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .why-choose-us {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>

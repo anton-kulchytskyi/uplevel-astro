@@ -1,0 +1,286 @@
+---
+// src/components/ui/ServiceCard.astro
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+// import { Icon } from 'astro-icon/components';
+
+const allImagesImports = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/services/*.{jpg,png,jpeg,webp}',
+  { eager: true }
+);
+
+const IMAGES: Record<string, ImageMetadata> = {};
+for (const path in allImagesImports) {
+  const key = path.split('/').pop()?.split('.')[0] ?? '';
+  IMAGES[key] = allImagesImports[path].default;
+}
+
+export interface Props {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  imageAlt: string;
+  reverse?: boolean;
+  index?: number;
+}
+
+const {
+  id,
+  title,
+  description,
+  url,
+  imageAlt,
+  reverse = false,
+  index = 0,
+} = Astro.props;
+const serviceImage = IMAGES[id];
+---
+
+<div
+  class:list={['service-card', { reverse }]}
+  style={`--delay: ${index * 0.1}s`}
+>
+  <div class="service-content">
+    <h3 class="service-title">{title}</h3>
+    <p class="service-description">{description}</p>
+    <a href={url} class="service-link">
+      Learn More
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="service-image">
+    {
+      serviceImage ? (
+        <Image
+          src={serviceImage}
+          alt={imageAlt}
+          class="service-img"
+          loading="lazy"
+          quality={85}
+        />
+      ) : (
+        <div class="image-placeholder">
+          <span>Image Coming Soon</span>
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .service-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    min-height: 300px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+
+  .service-card:hover::before {
+    left: 100%;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Alternating layout */
+  .service-card.reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-card.reverse .service-content {
+    order: 2;
+  }
+
+  .service-card.reverse .service-image {
+    order: 1;
+  }
+
+  .service-content {
+    z-index: 1;
+  }
+
+  .service-title {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .service-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Learn More Link */
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: linear-gradient(
+      145deg,
+      rgba(15, 63, 143, 0.4),
+      rgba(15, 63, 143, 0.2)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .service-link:hover {
+    background: linear-gradient(
+      145deg,
+      rgba(15, 63, 143, 0.6),
+      rgba(15, 63, 143, 0.4)
+    );
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(5px);
+  }
+
+  .service-link svg {
+    transition: transform 0.3s ease;
+  }
+
+  .service-link:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* Image */
+  .service-image {
+    width: 100%;
+    height: 250px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .service-img {
+    transform: scale(1.05);
+  }
+
+  /* Image Placeholder */
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 63, 143, 0.3) 0%,
+      rgba(43, 43, 43, 0.4) 100%
+    );
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-placeholder span {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-card,
+    .service-card.reverse {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 30px 20px;
+    }
+
+    .service-card.reverse .service-content,
+    .service-card.reverse .service-image {
+      order: unset;
+    }
+
+    .service-image {
+      height: 200px;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Якщо prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .service-card {
+      animation: simpleFadeIn 0.5s ease forwards;
+      transform: none;
+    }
+
+    @keyframes simpleFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+</style>

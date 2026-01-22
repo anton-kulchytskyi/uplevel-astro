@@ -1,0 +1,138 @@
+---
+// src/components/sections/CtaSection.astro
+
+export interface Props {
+  data: {
+    title: string;
+    text: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="cta-card">
+    <h2 class="cta-title">{data.title}</h2>
+    <p class="cta-text">{data.text}</p>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    margin: 3rem 0;
+  }
+
+  .cta-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    padding: 50px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards;
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Shine ефект на hover */
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transition: left 0.8s;
+    z-index: 0;
+  }
+
+  .cta-card:hover::before {
+    left: 100%;
+  }
+
+  .cta-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+    color: var(--color-white);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-text {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .cta-card {
+      padding: 40px 25px;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+    }
+
+    .cta-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-card {
+      padding: 30px 20px;
+    }
+
+    .cta-title {
+      font-size: 1.6rem;
+    }
+
+    .cta-text {
+      font-size: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-card {
+      animation: simpleFadeIn 0.5s ease forwards;
+      transform: none;
+    }
+
+    @keyframes simpleFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+</style>

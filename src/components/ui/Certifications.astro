@@ -1,0 +1,142 @@
+---
+// src/components/ui/Certifications.astro
+import { Image } from 'astro:assets';
+import iicrcLogo from '@/assets/images/certifications/iicrc-logo.jpg';
+import chamberLogo from '@/assets/images/certifications/chamber-logo.jpg';
+
+export interface Props {
+  show247?: boolean;
+  variant?: 'header' | 'footer';
+}
+
+const { show247 = true, variant = 'header' } = Astro.props;
+---
+
+<div class:list={['certifications', `certifications--${variant}`]}>
+  <Image
+    src={iicrcLogo}
+    alt="IICRC Certified Firm"
+    class="certification-logo"
+    loading={variant === 'header' ? 'eager' : 'lazy'}
+    decoding="async"
+    fetchpriority={variant === 'header' ? 'high' : 'auto'}
+  />
+  <Image
+    src={chamberLogo}
+    alt="Saskatoon Chamber of Commerce Member"
+    class="certification-logo"
+    loading={variant === 'header' ? 'eager' : 'lazy'}
+    decoding="async"
+    fetchpriority={variant === 'header' ? 'high' : 'auto'}
+  />
+  {show247 && <span class="badge-24-7">24/7</span>}
+</div>
+
+<style>
+  /* Header варіант */
+  .certifications--header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap; /* Завжди в один ряд */
+  }
+
+  .certifications--header .certification-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0; /* Не стискати логотипи */
+  }
+
+  .certifications--header .badge-24-7 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-primary), #1557b0);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(15, 63, 143, 0.3);
+    letter-spacing: 0.05em;
+    flex-shrink: 0; /* Не стискати badge */
+  }
+
+  /* Footer варіант - більші на ~33% */
+  .certifications--footer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .certifications--footer .certification-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .certifications--footer .certification-logo:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive для header - absolute positioning на малих екранах */
+  @media (max-width: 767px) {
+    .certifications--header {
+      position: absolute;
+      right: 1rem;
+      top: 1.25rem;
+      gap: 0.5rem;
+      z-index: 100;
+    }
+
+    .certifications--header .certification-logo {
+      height: 36px;
+    }
+
+    .certifications--header .badge-24-7 {
+      width: 36px;
+      height: 36px;
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .certifications--header {
+      gap: 0.4rem;
+    }
+
+    .certifications--header .certification-logo {
+      height: 28px;
+    }
+
+    .certifications--header .badge-24-7 {
+      width: 28px;
+      height: 28px;
+      font-size: 0.5rem;
+    }
+  }
+
+  /* Responsive для footer */
+  @media (max-width: 768px) {
+    .certifications--footer .certification-logo {
+      height: 50px; /* На планшетах трохи менше */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .certifications--footer {
+      gap: 1rem;
+    }
+
+    .certifications--footer .certification-logo {
+      height: 44px; /* На мобільних ще менше */
+    }
+  }
+</style>

@@ -1,0 +1,48 @@
+{
+  "main": [
+    { "title": "Home", "url": "/" },
+    { "title": "About Us", "url": "/about" },
+    { "title": "Our Services", "url": "/services" },
+    { "title": "Contacts", "url": "/contacts" },
+    { "title": "Get in Touch", "url": "/get-in-touch" }
+  ],
+  "services": [
+    {
+      "title": "Emergency Restoration",
+      "url": "/services/emergency-restoration"
+    },
+    { "title": "Water Damage", "url": "/services/water-damage-restoration" },
+    {
+      "title": "Fire & Smoke Damage",
+      "url": "/services/fire-smoke-damage-restoration"
+    },
+    { "title": "Mold Remediation", "url": "/services/mold-remediation" },
+    {
+      "title": "Contents & Pack-Out",
+      "url": "/services/contents-pack-out-services"
+    },
+    { "title": "Reconstruction", "url": "/services/reconstruction-after-loss" }
+  ],
+  "social": [
+    {
+      "platform": "Phone",
+      "url": "tel:+13068505955",
+      "icon": "Phone"
+    },
+    {
+      "platform": "Mail",
+      "url": "mailto:uplevel@uplevelcorp.ca",
+      "icon": "Mail"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/uplevel_corp/",
+      "icon": "Instagram"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/uplevelcorp/",
+      "icon": "Facebook"
+    }
+  ]
+}

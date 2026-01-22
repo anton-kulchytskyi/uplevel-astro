@@ -1,0 +1,291 @@
+---
+// src/components/sections/ValuesSection.astro
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+const allImagesImports = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/about/*.{jpg,png,jpeg,webp}',
+  { eager: true }
+);
+
+const IMAGES: Record<string, ImageMetadata> = {};
+for (const path in allImagesImports) {
+  const key = path.split('/').pop()?.split('.')[0] ?? '';
+  IMAGES[key] = allImagesImports[path].default;
+}
+
+// Типи для елементів - або фото, або текст
+type PhotoItem = {
+  image: string;
+  title?: string; // Опціонально для alt
+  description?: never;
+};
+
+type TextItem = {
+  title: string;
+  description: string;
+  image?: never;
+};
+
+type ValueItem = PhotoItem | TextItem;
+
+export interface Props {
+  data: {
+    title: string;
+    items: ValueItem[];
+  };
+}
+
+const { data } = Astro.props;
+
+// Type guard для перевірки чи це фото-картка
+function isPhotoItem(item: ValueItem): item is PhotoItem {
+  return 'image' in item && !!item.image;
+}
+---
+
+<section class="values-section">
+  <h2 class="values-title">{data.title}</h2>
+
+  <div class="values-grid">
+    {
+      data.items.map((item, index) => {
+        // Якщо є image - це фото-картка
+        if (item.image && IMAGES[item.image]) {
+          return (
+            <div class="photo-card" style={`--delay: ${index * 0.1}s`}>
+              <Image
+                src={IMAGES[item.image]}
+                alt={item.title || 'Restoration work'}
+                class="photo-image"
+                loading="lazy"
+                quality={85}
+              />
+            </div>
+          );
+        }
+
+        // Інакше - текстова картка
+        return (
+          <div class="value-card" style={`--delay: ${index * 0.1}s`}>
+            <h3 class="value-title">{item.title}</h3>
+            <p class="value-description">{item.description}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .values-section {
+    margin: 60px 0;
+  }
+
+  .values-title {
+    font-size: 2.2rem;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease 0.2s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px; /* 3 картки по ~360px + gaps */
+    margin: 40px auto 0;
+    gap: 30px;
+  }
+
+  /* Загальні стилі для обох типів карток */
+  .value-card,
+  .photo-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.6s ease forwards;
+    animation-delay: var(--delay);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Shine ефект */
+  .value-card::before,
+  .photo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transition: left 0.6s;
+    z-index: 2;
+  }
+
+  .value-card:hover::before,
+  .photo-card:hover::before {
+    left: 100%;
+  }
+
+  .value-card:hover,
+  .photo-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Текстова картка */
+  .value-card {
+    padding: 0 1rem;
+    aspect-ratio: 1 / 1; /* Квадратні картки */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .value-title {
+    font-size: 1.3rem;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .value-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Фото картка */
+  .photo-card {
+    padding: 0;
+    min-height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .value-card,
+  .photo-card {
+    aspect-ratio: auto;
+    min-height: 200px; /* або 280px */
+  }
+
+  .photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius);
+    display: block;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .values-section {
+      margin: 40px 0;
+    }
+
+    .values-title {
+      font-size: 1.8rem;
+      margin-bottom: 35px;
+    }
+
+    .values-grid {
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    .value-card {
+      padding: 25px 20px;
+    }
+
+    .photo-card {
+      min-height: 250px;
+    }
+
+    .photo-card,
+    .value-card {
+      aspect-ratio: auto; /* На мобілці можна без квадрату */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .values-title {
+      font-size: 1.6rem;
+    }
+
+    .value-title {
+      font-size: 1.2rem;
+    }
+
+    .value-description {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Якщо prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .values-title,
+    .value-card,
+    .photo-card {
+      animation: simpleFadeIn 0.5s ease forwards;
+      transform: none;
+    }
+
+    @keyframes simpleFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  /*Ховати останню картку на екранах з 2 картками в ряду */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .values-grid > *:last-child:nth-child(odd) {
+      display: none;
+    }
+
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: dense; /* <-- ключова штука: заповнює “дірки” */
+    }
+
+    /* міняємо місцями 3↔4, 7↔8, 11↔12 ... */
+    .values-grid > :nth-child(4n + 3) {
+      grid-column: 2;
+    }
+
+    .values-grid > :nth-child(4n + 4) {
+      grid-column: 1;
+    }
+  }
+</style>

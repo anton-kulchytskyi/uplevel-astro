@@ -1,0 +1,55 @@
+---
+// src/components/sections/ServicesSection.astro
+import ServiceCard from '@/components/ui/ServiceCard.astro';
+
+export interface Props {
+  services: Array<{
+    id: string;
+    title: string;
+    description: string;
+    url: string;
+    imageAlt: string;
+    reverse?: boolean;
+  }>;
+}
+
+const { services } = Astro.props;
+---
+
+<section class="services-section">
+  <div class="services-container">
+    {
+      services.map((service, index) => (
+        <ServiceCard
+          id={service.id}
+          title={service.title}
+          description={service.description}
+          url={service.url}
+          imageAlt={service.imageAlt}
+          reverse={service.reverse}
+          index={index}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .services-section {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .services-container {
+      gap: 30px;
+    }
+  }
+</style>

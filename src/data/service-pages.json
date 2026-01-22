@@ -1,0 +1,362 @@
+{
+  "emergency-restoration": {
+    "seo": {
+      "title": "24/7 Emergency Restoration Services Saskatoon | Uplevel Restoration",
+      "description": "Round-the-clock emergency restoration services in Saskatoon. Our certified team provides immediate response for water damage, fire damage, and property disasters. Call now!",
+      "keywords": "emergency restoration Saskatoon, 24/7 restoration, rapid response, property emergency, disaster response"
+    },
+    "hero": {
+      "title": "Emergency Restoration (24/7)",
+      "subtitle": "When disaster strikes, every minute counts. Our certified emergency response team is available around the clock to minimize damage and begin restoration immediately.",
+      "backgroundImage": "emergency-restoration"
+    },
+    "intro": "Property emergencies don't wait for business hours. That's why Uplevel Restoration offers 24/7 emergency response services throughout Saskatoon and surrounding areas. Whether it's a burst pipe at midnight or storm damage on a holiday, our team is ready to respond within 60 minutes to protect your property and begin the restoration process.",
+    "features": [
+      {
+        "icon": "🚨",
+        "title": "Rapid Response",
+        "description": "Our emergency team responds within 60 minutes, day or night, to minimize damage and start mitigation immediately."
+      },
+      {
+        "icon": "📞",
+        "title": "24/7 Availability",
+        "description": "We're available every day of the year, including holidays and weekends. One call connects you to help."
+      },
+      {
+        "icon": "🛡️",
+        "title": "IICRC Certified",
+        "description": "Our technicians are IICRC certified, ensuring professional standards and proper restoration techniques."
+      },
+      {
+        "icon": "📋",
+        "title": "Insurance Assistance",
+        "description": "We work directly with your insurance company, documenting damage and streamlining the claims process."
+      }
+    ],
+    "process": {
+      "title": "Our Emergency Response Process",
+      "steps": [
+        {
+          "title": "Emergency Call",
+          "description": "Contact our 24/7 hotline. Our dispatcher will gather information and dispatch a team immediately."
+        },
+        {
+          "title": "Rapid Assessment",
+          "description": "Our team arrives on-site to assess the damage, identify the source, and create an action plan."
+        },
+        {
+          "title": "Immediate Mitigation",
+          "description": "We begin emergency mitigation to stop ongoing damage - water extraction, board-up, tarping, etc."
+        },
+        {
+          "title": "Restoration Plan",
+          "description": "We develop a comprehensive restoration plan and coordinate with your insurance for seamless recovery."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Need Emergency Help Right Now?",
+      "subtitle": "Don't wait - every minute counts when dealing with property damage."
+    }
+  },
+  "water-damage-restoration": {
+    "seo": {
+      "title": "Water Damage Restoration Services Saskatoon | Uplevel Restoration",
+      "description": "Professional water damage restoration in Saskatoon. Expert water extraction, drying, and dehumidification services. We handle floods, leaks, and storm damage 24/7.",
+      "keywords": "water damage restoration Saskatoon, flood cleanup, water extraction, structural drying, leak repair"
+    },
+    "hero": {
+      "title": "Water Damage Restoration",
+      "subtitle": "Fast, professional water damage restoration to protect your property and prevent secondary damage like mold growth.",
+      "backgroundImage": "water-damage"
+    },
+    "intro": "Water damage can occur from many sources - burst pipes, appliance failures, roof leaks, flooding, or sewage backups. Whatever the cause, quick action is essential to minimize damage and prevent mold growth. Uplevel Restoration provides comprehensive water damage restoration services using advanced equipment and proven techniques to restore your property to pre-loss condition.",
+    "features": [
+      {
+        "icon": "💧",
+        "title": "Water Extraction",
+        "description": "Industrial-grade pumps and vacuums remove standing water quickly, minimizing damage to floors and structures."
+      },
+      {
+        "icon": "🌡️",
+        "title": "Structural Drying",
+        "description": "Professional-grade dehumidifiers and air movers ensure complete drying of walls, floors, and hidden spaces."
+      },
+      {
+        "icon": "🔬",
+        "title": "Moisture Detection",
+        "description": "Advanced moisture meters and thermal imaging identify hidden water damage behind walls and under floors."
+      },
+      {
+        "icon": "🦠",
+        "title": "Mold Prevention",
+        "description": "Antimicrobial treatments and thorough drying prevent mold growth that can start within 24-48 hours."
+      }
+    ],
+    "process": {
+      "title": "Our Water Damage Restoration Process",
+      "steps": [
+        {
+          "title": "Inspection & Assessment",
+          "description": "We identify the water source, categorize the water damage, and assess the extent of affected areas."
+        },
+        {
+          "title": "Water Removal",
+          "description": "Using powerful pumps and extraction equipment, we remove standing water as quickly as possible."
+        },
+        {
+          "title": "Drying & Dehumidification",
+          "description": "Professional drying equipment removes moisture from walls, floors, and furniture to prevent damage."
+        },
+        {
+          "title": "Cleaning & Restoration",
+          "description": "We clean, sanitize, and restore affected areas and belongings to their pre-damage condition."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Water Damage Emergency?",
+      "subtitle": "Fast response is critical. Call us now for immediate water damage restoration."
+    }
+  },
+  "fire-smoke-damage-restoration": {
+    "seo": {
+      "title": "Fire & Smoke Damage Restoration Saskatoon | Uplevel Restoration",
+      "description": "Complete fire and smoke damage restoration in Saskatoon. Expert soot removal, odor elimination, and structural repairs. We restore your property after fire disasters.",
+      "keywords": "fire damage restoration Saskatoon, smoke damage cleanup, soot removal, fire reconstruction, odor elimination"
+    },
+    "hero": {
+      "title": "Fire & Smoke Damage Restoration",
+      "subtitle": "Comprehensive fire damage restoration from emergency board-up to complete reconstruction, including soot removal and odor elimination.",
+      "backgroundImage": "fire-smoke"
+    },
+    "intro": "Fire damage extends far beyond the visible burn marks. Smoke, soot, and water from firefighting efforts can cause additional damage throughout your property. Uplevel Restoration provides complete fire damage restoration services, addressing all aspects of fire damage to return your property to its pre-loss condition. Our IICRC certified technicians understand the complexities of fire restoration and work efficiently to minimize your disruption.",
+    "features": [
+      {
+        "icon": "🔥",
+        "title": "Soot & Smoke Removal",
+        "description": "Specialized cleaning techniques and equipment remove soot from all surfaces without causing further damage."
+      },
+      {
+        "icon": "💨",
+        "title": "Odor Elimination",
+        "description": "Advanced deodorization methods including ozone treatment and thermal fogging eliminate smoke odors completely."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Structural Repairs",
+        "description": "From minor repairs to complete reconstruction, we restore fire-damaged structures to their original condition."
+      },
+      {
+        "icon": "📦",
+        "title": "Content Restoration",
+        "description": "We clean and restore smoke-damaged belongings, including furniture, clothing, electronics, and documents."
+      }
+    ],
+    "process": {
+      "title": "Our Fire Restoration Process",
+      "steps": [
+        {
+          "title": "Emergency Board-Up",
+          "description": "We secure your property immediately to prevent further damage from weather and unauthorized entry."
+        },
+        {
+          "title": "Damage Assessment",
+          "description": "Thorough inspection to document all fire, smoke, soot, and water damage for insurance purposes."
+        },
+        {
+          "title": "Soot & Water Removal",
+          "description": "We remove soot, smoke residue, and any water damage from firefighting efforts."
+        },
+        {
+          "title": "Restoration & Rebuild",
+          "description": "Complete restoration including odor removal, cleaning, repairs, and reconstruction as needed."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Fire Damage to Your Property?",
+      "subtitle": "We're here to help you recover. Contact us for immediate fire damage restoration."
+    }
+  },
+  "mold-remediation": {
+    "seo": {
+      "title": "Mold Remediation Services Saskatoon | Uplevel Restoration",
+      "description": "Professional mold inspection and remediation in Saskatoon. We identify moisture sources, eliminate mold growth, and prevent future contamination. Safe and thorough mold removal.",
+      "keywords": "mold remediation Saskatoon, mold removal, mold inspection, mold testing, black mold removal"
+    },
+    "hero": {
+      "title": "Mold Remediation",
+      "subtitle": "Professional mold inspection, containment, and removal to protect your property and health from harmful mold growth.",
+      "backgroundImage": "mold-remediation"
+    },
+    "intro": "Mold can pose serious health risks and cause significant damage to your property. It often develops in hidden areas after water damage, high humidity, or poor ventilation. Uplevel Restoration provides comprehensive mold remediation services, from thorough inspection and testing to complete removal and prevention. Our certified technicians follow industry best practices to ensure safe, effective mold elimination.",
+    "features": [
+      {
+        "icon": "🔍",
+        "title": "Mold Inspection",
+        "description": "Thorough inspection using advanced detection methods to identify mold growth and moisture sources."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Safe Containment",
+        "description": "Professional containment prevents mold spores from spreading during the remediation process."
+      },
+      {
+        "icon": "🧹",
+        "title": "Complete Removal",
+        "description": "HEPA filtration and specialized techniques ensure complete removal of mold and contaminated materials."
+      },
+      {
+        "icon": "🌿",
+        "title": "Prevention Plan",
+        "description": "We address moisture sources and provide recommendations to prevent future mold growth."
+      }
+    ],
+    "process": {
+      "title": "Our Mold Remediation Process",
+      "steps": [
+        {
+          "title": "Inspection & Testing",
+          "description": "We identify mold type, extent of growth, and locate moisture sources causing the problem."
+        },
+        {
+          "title": "Containment",
+          "description": "We isolate the affected area using physical barriers and negative air pressure to prevent spread."
+        },
+        {
+          "title": "Removal & Cleaning",
+          "description": "Mold-infested materials are safely removed, and all surfaces are cleaned with antimicrobial solutions."
+        },
+        {
+          "title": "Restoration & Prevention",
+          "description": "We restore affected areas and address moisture issues to prevent mold from returning."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Suspect Mold in Your Property?",
+      "subtitle": "Don't ignore the signs. Professional mold remediation protects your health and property."
+    }
+  },
+  "contents-pack-out-services": {
+    "seo": {
+      "title": "Contents & Pack-Out Services Saskatoon | Uplevel Restoration",
+      "description": "Professional contents pack-out and restoration services in Saskatoon. Secure inventory, cleaning, and storage of belongings during property restoration.",
+      "keywords": "contents pack-out Saskatoon, inventory services, contents cleaning, storage services, belongings restoration"
+    },
+    "hero": {
+      "title": "Contents & Pack-Out Services",
+      "subtitle": "Secure inventory, pack-out, cleaning, and storage of your belongings during restoration with detailed documentation.",
+      "backgroundImage": "contents-packout"
+    },
+    "intro": "When disaster strikes, protecting your personal belongings is a top priority. Uplevel Restoration provides comprehensive contents services including inventory, pack-out, cleaning, storage, and return of your items. We treat your belongings with the same care you would, providing detailed documentation throughout the process for your peace of mind and insurance purposes.",
+    "features": [
+      {
+        "icon": "📋",
+        "title": "Detailed Inventory",
+        "description": "Every item is documented with photos and descriptions for accurate insurance claims and tracking."
+      },
+      {
+        "icon": "📦",
+        "title": "Secure Pack-Out",
+        "description": "Professional packing and transport of your belongings using appropriate materials and methods."
+      },
+      {
+        "icon": "✨",
+        "title": "Contents Cleaning",
+        "description": "Specialized cleaning for different item types including electronics, documents, and soft goods."
+      },
+      {
+        "icon": "🏪",
+        "title": "Climate-Controlled Storage",
+        "description": "Safe, secure storage in our climate-controlled facility until your property is ready."
+      }
+    ],
+    "process": {
+      "title": "Our Pack-Out Process",
+      "steps": [
+        {
+          "title": "Assessment & Planning",
+          "description": "We assess your belongings and create a customized plan for pack-out, cleaning, and storage."
+        },
+        {
+          "title": "Inventory & Documentation",
+          "description": "Each item is photographed, described, and barcoded for accurate tracking throughout the process."
+        },
+        {
+          "title": "Pack-Out & Cleaning",
+          "description": "Items are carefully packed, transported, and cleaned using appropriate methods for each item type."
+        },
+        {
+          "title": "Storage & Return",
+          "description": "Secure storage until restoration is complete, then careful unpacking and placement in your restored home."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Need Your Belongings Protected?",
+      "subtitle": "We handle your contents with care during the restoration process."
+    }
+  },
+  "reconstruction-after-loss": {
+    "seo": {
+      "title": "Reconstruction After Loss Services Saskatoon | Uplevel Restoration",
+      "description": "Full-service reconstruction and rebuilding after property disasters in Saskatoon. From structural repairs to final finishes, we restore your property to pre-loss condition.",
+      "keywords": "reconstruction Saskatoon, property rebuilding, post-disaster reconstruction, structural repairs, home restoration"
+    },
+    "hero": {
+      "title": "Reconstruction After Loss",
+      "subtitle": "Complete property reconstruction services to restore your home or business to pre-loss condition - or better.",
+      "backgroundImage": "reconstruction"
+    },
+    "intro": "After emergency mitigation is complete, the next step is reconstruction. Uplevel Restoration provides full-service reconstruction to return your property to its original condition. As a single-source restoration company, we handle everything from initial damage assessment through final reconstruction, eliminating the need for multiple contractors and ensuring seamless project management.",
+    "features": [
+      {
+        "icon": "🏗️",
+        "title": "Structural Repairs",
+        "description": "Complete structural rebuilding including framing, roofing, and foundation repairs to restore integrity."
+      },
+      {
+        "icon": "🎨",
+        "title": "Interior Finishing",
+        "description": "Drywall, painting, flooring, and trim work to match or exceed your property's original condition."
+      },
+      {
+        "icon": "⚡",
+        "title": "Systems Restoration",
+        "description": "Electrical, plumbing, and HVAC repairs or upgrades as needed for complete property restoration."
+      },
+      {
+        "icon": "📑",
+        "title": "Project Management",
+        "description": "Single-source coordination means one team manages your entire project from start to finish."
+      }
+    ],
+    "process": {
+      "title": "Our Reconstruction Process",
+      "steps": [
+        {
+          "title": "Detailed Scope & Estimate",
+          "description": "We create a comprehensive reconstruction plan with detailed scope of work and cost estimates."
+        },
+        {
+          "title": "Insurance Coordination",
+          "description": "We work directly with your insurance adjuster to ensure all necessary work is approved and covered."
+        },
+        {
+          "title": "Quality Construction",
+          "description": "Our skilled craftsmen perform all reconstruction work to high standards with regular progress updates."
+        },
+        {
+          "title": "Final Walkthrough",
+          "description": "We conduct a thorough final inspection with you to ensure complete satisfaction with the restoration."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Rebuild?",
+      "subtitle": "Let us restore your property to its pre-loss condition with quality craftsmanship."
+    }
+  }
+}

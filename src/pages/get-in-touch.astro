@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import GetInTouchForm from '@/components/sections/GetInTouchForm.astro';
+export type FieldType = 'text' | 'email' | 'tel' | 'textarea';
+
+export type FormFieldConfig = {
+  type: FieldType;
+  name: string;
+  label: string;
+  placeholder?: string;
+  required?: boolean;
+};
+
+export type GetInTouchContent = {
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    ogType?: string;
+    ogUrl?: string;
+    ogImage?: string;
+  };
+  hero: {
+    title: string;
+    subtitle?: string;
+    backgroundImage?: string | null;
+    showCta?: boolean;
+  };
+  form: {
+    formName: string;
+    submitText: string;
+    fields: FormFieldConfig[];
+    modal: {
+      title: string;
+      message: string;
+      closeText: string;
+    };
+  };
+};
+
+import raw from '@/data/get-in-touch.json';
+
+const pageContent = raw as unknown as GetInTouchContent;
+---
+
+<BaseLayout seoData={pageContent.seo}>
+  <Hero data={pageContent.hero} />
+  <GetInTouchForm data={pageContent.form} />
+</BaseLayout>

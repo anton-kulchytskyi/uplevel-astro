@@ -1,0 +1,152 @@
+---
+import '@/styles/global.css';
+import { fade, slide } from 'astro:transitions';
+
+import Header from '@/components/layout/Header.astro';
+import MobileMenu from '@/components/layout/MobileMenu.astro';
+import EmergencyBanner from '../components/layout/EmergencyBanner.astro';
+import ToggleButton from '@/components/layout/ToggleButton.astro';
+import Breadcrumbs from '@/components/layout/Breadcrumbs.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+export interface SeoData {
+  title: string;
+  description: string;
+  keywords: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogType?: string;
+  ogUrl?: string;
+  ogImage?: string;
+}
+
+export interface Props {
+  seoData: SeoData;
+  showBreadcrumbs?: boolean;
+}
+
+const { seoData, showBreadcrumbs = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{seoData.title}</title>
+    <meta name="description" content={seoData.description} />
+    <meta name="keywords" content={seoData.keywords} />
+    <meta property="og:title" content={seoData.ogTitle} />
+    <meta property="og:description" content={seoData.ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://uplevel-restoration.netlify.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://uplevel-restoration.netlify.app/assets/images/logo.png"
+    />
+
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Uplevel Restoration - 24/7"
+    />
+
+    {/* Посилання на шрифти */}
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <div transition:persist="header">
+      <ToggleButton />
+      <MobileMenu />
+      <Header />
+    </div>
+    <EmergencyBanner />
+
+    {showBreadcrumbs && <Breadcrumbs />}
+
+    <main transition:animate={slide({ duration: '0.4s' })}>
+      <slot />
+    </main>
+    <div transition:persist="footer">
+      <Footer />
+    </div>
+    <!-- -- Step 2: Add the Web3Forms script ---->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  </body>
+</html>
+
+<style is:global>
+  /* Кастомні анімації для view transitions */
+  @keyframes slide-from-bottom {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-to-top {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  /* Застосування анімацій */
+  ::view-transition-old(root) {
+    animation: slide-to-top 4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-new(root) {
+    animation: slide-from-bottom 4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Для елементів з transition:persist анімація не потрібна */
+  ::view-transition-old(header),
+  ::view-transition-new(header),
+  ::view-transition-old(footer),
+  ::view-transition-new(footer) {
+    animation: none;
+  }
+
+  /* Accessibility - вимикаємо анімації для користувачів з motion sickness */
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: fade 0.2s ease-in-out;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  /* Плавність при завантаженні */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

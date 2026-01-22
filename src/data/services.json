@@ -1,0 +1,65 @@
+{
+  "seo": {
+    "title": "Property Restoration Services Saskatoon - Water, Fire, Mold | Uplevel Restoration",
+    "description": "Professional property restoration services in Saskatoon: emergency restoration, water damage, fire & smoke damage, mold remediation, contents pack-out, and reconstruction.",
+    "keywords": "property restoration services Saskatoon, emergency restoration, water damage restoration, fire damage restoration, smoke damage restoration, mold remediation Saskatoon, contents pack-out, reconstruction services",
+    "ogTitle": "Property Restoration Services in Saskatoon | Uplevel Restoration",
+    "ogDescription": "24/7 emergency restoration services: water damage, fire & smoke damage, mold remediation, contents handling, and complete reconstruction in Saskatoon.",
+    "ogType": "website",
+    "ogUrl": "https://uplevel-restoration.netlify.app/services",
+    "ogImage": "https://uplevel-restoration.netlify.app/assets/images/logo.png"
+  },
+  "hero": {
+    "title": "Our Services",
+    "subtitle": "Professional property restoration services to help you recover from water damage, fire, mold, and other disasters. Available 24/7 for emergencies.",
+    "backgroundImage": null,
+    "showCta": true
+  },
+  "services": [
+    {
+      "id": "emergency-restoration",
+      "title": "Emergency Restoration (24/7)",
+      "description": "When disaster strikes, every minute counts. Our certified emergency response team is available around the clock to minimize damage and begin restoration immediately. We respond within 60 minutes to protect your property.",
+      "url": "/services/emergency-restoration",
+      "imageAlt": "Emergency restoration services - 24/7 rapid response team"
+    },
+    {
+      "id": "water-damage",
+      "title": "Water Damage Restoration",
+      "description": "Fast, professional water damage restoration to protect your property and prevent secondary damage like mold growth. We handle floods, burst pipes, leaks, and storm damage with advanced equipment and proven techniques.",
+      "url": "/services/water-damage-restoration",
+      "imageAlt": "Water damage restoration - flood cleanup and drying services",
+      "reverse": true
+    },
+    {
+      "id": "fire-smoke",
+      "title": "Fire & Smoke Damage Restoration",
+      "description": "Comprehensive fire damage restoration from emergency board-up to complete reconstruction. Our specialists handle soot removal, odor elimination, and structural repairs to restore your property after fire disasters.",
+      "url": "/services/fire-smoke-damage-restoration",
+      "imageAlt": "Fire and smoke damage restoration services"
+    },
+    {
+      "id": "mold-remediation",
+      "title": "Mold Remediation",
+      "description": "Professional mold inspection, containment, and removal to protect your property and health. We identify moisture sources, eliminate mold growth, and prevent future contamination using industry best practices.",
+      "url": "/services/mold-remediation",
+      "imageAlt": "Professional mold remediation and removal services",
+      "reverse": true
+    },
+    {
+      "id": "contents-packout",
+      "title": "Contents & Pack-Out Services",
+      "description": "Secure inventory, pack-out, cleaning, and storage of your belongings during restoration. We treat your items with care, providing detailed documentation and climate-controlled storage solutions.",
+      "url": "/services/contents-pack-out-services",
+      "imageAlt": "Contents handling and pack-out services for damaged property"
+    },
+    {
+      "id": "reconstruction",
+      "title": "Reconstruction After Loss",
+      "description": "Complete property reconstruction services to restore your home or business to pre-loss condition. From structural repairs to final finishes, we handle everything as a single-source restoration company.",
+      "url": "/services/reconstruction-after-loss",
+      "imageAlt": "Complete reconstruction services after property loss",
+      "reverse": true
+    }
+  ]
+}

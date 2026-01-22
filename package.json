@@ -1,0 +1,21 @@
+{
+  "name": "uplevel-with-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.16.11"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.5.0",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

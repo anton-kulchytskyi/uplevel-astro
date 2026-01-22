@@ -1,0 +1,48 @@
+---
+import DesktopNav from '@/components/sections/DesktopNav.astro';
+import Logo from '@/components/ui/Logo.astro';
+import Certifications from '@/components/ui/Certifications.astro';
+---
+
+<header class="header">
+  <div class="header-container">
+    <Logo />
+    <DesktopNav />
+    <Certifications />
+  </div>
+</header>
+
+<style>
+  .header {
+    z-index: 1000;
+    min-height: 120px;
+
+    background-color: var(--color-white) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: none;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    color-scheme: light;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .header {
+      min-height: 70px;
+    }
+
+    .header-container {
+      padding: 0.5rem 0.75rem;
+      flex-wrap: nowrap;
+      min-height: 70px;
+    }
+  }
+</style>

@@ -1,0 +1,68 @@
+{
+  "seo": {
+    "title": "About Uplevel Restoration - Emergency Property Restoration Experts in Saskatoon",
+    "description": "Learn about Uplevel Restoration - Saskatoon's trusted 24/7 emergency property restoration team. Expert water damage, fire damage, and mold remediation services with insurance-focused approach.",
+    "keywords": "about Uplevel Restoration, emergency restoration Saskatoon, property restoration company, restoration experts Saskatoon, water damage specialists, fire damage restoration team, mold remediation professionals",
+    "ogTitle": "About Uplevel Restoration - Emergency Restoration Experts",
+    "ogDescription": "Saskatoon's trusted emergency property restoration team. 24/7 response for water, fire, smoke, and mold damage. Insurance-focused. Locally owned.",
+    "ogType": "website",
+    "ogUrl": "https://uplevel-restoration.netlify.app/about",
+    "ogImage": "https://uplevel-restoration.netlify.app/assets/images/logo.png"
+  },
+  "hero": {
+    "title": "Our Mission:<br />Restoring More Than Property",
+    "subtitle": "Emergency Response. Expert Mitigation. Complete Restoration",
+    "backgroundImage": null,
+    "showCta": false
+  },
+  "mainStory": [
+    "At Uplevel Restoration, we understand disasters don't wait. When water, fire, smoke, or mold threatens your property, our emergency team is ready 24/7 to protect what matters most.",
+    "Founded by experienced restoration professionals in Saskatoon, we're built on one mission: providing fast, professional, insurance-focused emergency restoration when you need it most.",
+    "We've responded to hundreds of emergency calls — from burst pipes to fire losses and mold discoveries. Our commitment is industry-standard mitigation, clear communication, and complete restoration to help you recover with confidence."
+  ],
+  "values": {
+    "title": "What We Stand For",
+    "items": [
+      {
+        "title": "Rapid Emergency Response",
+        "description": "When disaster strikes, every minute counts. We respond 24/7 to water, fire, smoke, and mold emergencies to stabilize your property, prevent further damage, and begin the mitigation process immediately."
+      },
+      {
+        "image": "about-1"
+      },
+      {
+        "title": "Industry-Standard Mitigation",
+        "description": "We don't cut corners. Our restoration work follows established industry standards for drying, cleaning, remediation, and documentation — ensuring your property is properly treated and your insurance claim is supported with accurate information."
+      },
+      {
+        "image": "about-2"
+      },
+      {
+        "title": "Insurance-Focused Approach",
+        "description": "We work directly with homeowners and insurance providers throughout the entire claims process. From initial damage assessment and photo documentation to detailed scope preparation, we help move your claim forward professionally and efficiently."
+      },
+      {
+        "image": "about-3"
+      },
+      {
+        "title": "Complete Restoration Services",
+        "description": "From emergency mitigation and contents handling to full post-loss reconstruction, we manage every phase of the restoration process. One team. One point of contact. Less stress for you."
+      },
+      {
+        "image": "about-4"
+      },
+      {
+        "title": "Clear Communication & Transparency",
+        "description": "Dealing with property damage is stressful enough. We keep you informed at every step — explaining what's happening, what comes next, and what to expect. No confusion. No surprises. Just honest, professional service."
+      }
+    ]
+  },
+  "location": {
+    "title": "Locally Owned. Locally Trusted.",
+    "text": "We're proud to serve Saskatoon and the surrounding communities. As a locally owned restoration company, we understand the unique challenges Saskatchewan properties face — from winter freeze-thaw cycles to basement flooding and everything in between. When disaster strikes close to home, we're here to help you recover."
+  },
+  "cta": {
+    "title": "Here When You Need Us Most",
+    "text": "Uplevel Restoration isn't just a name — it's our commitment to raising the standard for emergency property restoration. Whether you're dealing with an active water loss, fire damage, or mold discovery, our team is ready to respond, mitigate, and restore your property with professionalism and care."
+  }
+}

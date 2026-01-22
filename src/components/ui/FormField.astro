@@ -1,0 +1,89 @@
+---
+export interface Props {
+  field: {
+    type: 'text' | 'email' | 'tel' | 'textarea';
+    name: string;
+    label: string;
+    placeholder?: string;
+    required?: boolean;
+  };
+}
+
+const { field } = Astro.props;
+const id = field.name;
+---
+
+<div class="form-group">
+  <label for={id} class="form-label">
+    {field.label}
+  </label>
+
+  {
+    field.type === 'textarea' ? (
+      <textarea
+        id={id}
+        name={field.name}
+        class="form-textarea"
+        placeholder={field.placeholder}
+        required={field.required}
+      />
+    ) : (
+      <input
+        type={field.type}
+        id={id}
+        name={field.name}
+        class="form-input"
+        placeholder={field.placeholder}
+        required={field.required}
+      />
+    )
+  }
+</div>
+
+<style>
+  .form-group {
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .form-label {
+    display: block;
+    color: var(--color-white);
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: calc(var(--radius) * 0.5);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+</style>

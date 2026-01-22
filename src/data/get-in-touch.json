@@ -1,0 +1,52 @@
+{
+  "seo": {
+    "title": "Get in Touch | 24/7 Emergency Restoration | Uplevel Restoration",
+    "description": "When disaster strikes, Uplevel Restoration is ready. Contact our 24/7 emergency restoration team in Saskatoon for water, fire, smoke, or mold damage.",
+    "keywords": "emergency restoration, water damage, fire damage, mold remediation, Saskatoon restoration, Uplevel Restoration, 24/7 emergency service"
+  },
+  "hero": {
+    "title": "Need Help After Property Damage?",
+    "subtitle": "Contact Uplevel Restoration to speak directly with our experienced team. We respond 24/7 to emergency water, fire, smoke, and mold losses and provide clear guidance from first response through full restoration.",
+    "backgroundImage": null,
+    "showCta": false
+  },
+  "form": {
+    "formName": "contact",
+    "submitText": "Send Message",
+    "fields": [
+      {
+        "type": "text",
+        "name": "firstName",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": true
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "label": "Email Address",
+        "placeholder": "your.email@example.com",
+        "required": true
+      },
+      {
+        "type": "tel",
+        "name": "phone",
+        "label": "Phone Number",
+        "placeholder": "(123) 456-7890",
+        "required": true
+      },
+      {
+        "type": "textarea",
+        "name": "message",
+        "label": "How Can We Help?",
+        "placeholder": "Tell us about the damage, timeline, and any immediate concerns. Our team is available 24/7 for emergency response.",
+        "required": true
+      }
+    ],
+    "modal": {
+      "title": "Thank You for Reaching Out",
+      "message": "Your message has been received. A member of our restoration team will contact you shortly to discuss next steps.",
+      "closeText": "Close"
+    }
+  }
+}

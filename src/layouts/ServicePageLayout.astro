@@ -1,0 +1,72 @@
+---
+// src/layouts/ServicePageLayout.astro
+import BaseLayout from './BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import ServiceIntro from '@/components/sections/ServiceIntro.astro';
+import ServiceFeatures from '@/components/sections/ServiceFeatures.astro';
+import ServiceProcess from '@/components/sections/ServiceProcess.astro';
+import ServiceCta from '@/components/sections/ServiceCta.astro';
+
+export interface Props {
+  pageData: {
+    seo: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+    hero: {
+      title: string;
+      subtitle: string;
+      backgroundImage: string;
+    };
+    intro: string;
+    features: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+    process: {
+      title: string;
+      steps: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+    };
+  };
+}
+
+const { pageData } = Astro.props;
+const heroData = {
+  ...pageData.hero,
+  showCta: false,
+};
+---
+
+<BaseLayout seoData={pageData.seo}>
+  <Hero data={heroData} />
+
+  <section class="service-content-section">
+    <ServiceIntro text={pageData.intro} />
+    <ServiceFeatures features={pageData.features} />
+    <ServiceProcess data={pageData.process} />
+    <ServiceCta data={pageData.cta} />
+  </section>
+</BaseLayout>
+
+<style>
+  .service-content-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  @media (max-width: 768px) {
+    .service-content-section {
+      padding: 40px 20px;
+    }
+  }
+</style>

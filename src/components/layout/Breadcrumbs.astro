@@ -1,0 +1,104 @@
+---
+import linksData from '@/data/links.json';
+
+const currentPath = Astro.url.pathname;
+const allLinks = [...linksData.main, ...linksData.services];
+
+function findPageInfo(url: string) {
+  return allLinks.find((link) => link.url === url);
+}
+
+const breadcrumbs = [];
+breadcrumbs.push({ title: 'Home', url: '/' });
+const pathSegments = currentPath.split('/').filter((s) => s);
+
+if (pathSegments[0] === 'services' && pathSegments.length > 1) {
+  breadcrumbs.push({ title: 'Our Services', url: '/services' });
+}
+
+if (currentPath !== '/') {
+  const currentPage = findPageInfo(currentPath);
+  if (currentPage) {
+    breadcrumbs.push({ title: currentPage.title, url: null });
+  }
+}
+---
+
+{
+  breadcrumbs.length > 1 && (
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol class="breadcrumbs-list">
+        {breadcrumbs.map((crumb, index) => {
+          const isLast = index === breadcrumbs.length - 1;
+
+          return (
+            <li class="breadcrumbs-item">
+              {!isLast && crumb.url ? (
+                <>
+                  <a href={crumb.url}>{crumb.title}</a>
+                  <span class="breadcrumbs-separator">›</span>
+                </>
+              ) : (
+                <span class="current">{crumb.title}</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  )
+}
+
+<style>
+  .breadcrumbs {
+    margin: 2rem var(--spacing) 0;
+  }
+
+  .breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .breadcrumbs-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumbs-item a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+
+  .breadcrumbs-item .current {
+    color: var(--color-white);
+    font-weight: 500;
+  }
+
+  .breadcrumbs-separator {
+    color: rgba(255, 255, 255, 0.4);
+    user-select: none;
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      padding: 0.75rem 0;
+    }
+
+    .breadcrumbs-item {
+      font-size: 0.85rem;
+    }
+  }
+</style>

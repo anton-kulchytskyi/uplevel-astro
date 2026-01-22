@@ -1,0 +1,398 @@
+---
+import FormField from '@/components/ui/FormField.astro';
+type FieldType = 'text' | 'email' | 'tel' | 'textarea';
+
+type FormFieldConfig = {
+  type: FieldType;
+  name: string;
+  label: string;
+  placeholder?: string;
+  required?: boolean;
+};
+
+export interface Props {
+  data: {
+    formName: string;
+    submitText: string;
+    fields: FormFieldConfig[];
+    modal: {
+      title: string;
+      message: string;
+      closeText: string;
+    };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="get-in-touch">
+  <div class="contact-form">
+    <form id="contactForm">
+      {data.fields.map((field) => <FormField field={field} />)}
+      <div class="h-captcha" data-captcha="true"></div>
+
+      <button type="submit" class="submit-btn">{data.submitText}</button>
+    </form>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-icon" aria-hidden="true">✅</div>
+      <h3 class="modal-title" id="modalTitle">{data.modal.title}</h3>
+      <p class="modal-message">{data.modal.message}</p>
+      <button class="modal-close-btn" id="closeModal" type="button">
+        {data.modal.closeText}
+      </button>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Phone number formatting function
+  function formatPhoneNumber(phoneNumber) {
+    const cleaned = phoneNumber.replace(/\D/g, '');
+
+    if (cleaned.length <= 3) {
+      return cleaned;
+    } else if (cleaned.length <= 6) {
+      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
+    } else {
+      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`;
+    }
+  }
+
+  function initGetInTouchForm() {
+    const form = document.getElementById('contactForm');
+    const phone = document.getElementById('phone');
+    const modal = document.getElementById('successModal');
+    const closeBtn = document.getElementById('closeModal');
+
+    if (!form || !phone || !modal || !closeBtn) return;
+
+    // Apply phone formatting on input
+    phone.addEventListener('input', function (e) {
+      const formatted = formatPhoneNumber(e.target.value);
+      e.target.value = formatted;
+    });
+
+    // Close modal and clear form
+    function closeModal() {
+      modal.classList.remove('show');
+      setTimeout(() => form.reset(), 300);
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      formData.append('access_key', 'c14f671a-01f6-4368-9109-ce11b174584f');
+
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          modal.classList.add('show');
+          form.reset();
+        } else {
+          alert('Error: ' + data.message);
+        }
+      } catch (error) {
+        alert('Something went wrong. Please try again.');
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Close on button
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on overlay click
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+      }
+    });
+  }
+
+  // Make sure it works with Astro navigation as well
+  document.addEventListener('DOMContentLoaded', initGetInTouchForm);
+  document.addEventListener('astro:page-load', initGetInTouchForm);
+</script>
+
+<style>
+  .get-in-touch {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  .contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+
+  .contact-form:hover::before {
+    left: 100%;
+  }
+
+  .contact-form:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .submit-btn {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
+    padding: 15px 40px;
+    border-radius: calc(var(--radius) * 0.5);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .submit-btn:hover::before {
+    left: 100%;
+  }
+
+  .submit-btn:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.2)
+    );
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .submit-btn:active {
+    transform: translateY(-1px);
+  }
+
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius);
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .modal-overlay.show .modal {
+    transform: scale(1) translateY(0);
+  }
+
+  .modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+
+  .modal:hover::before {
+    left: 100%;
+  }
+
+  .modal-icon {
+    font-size: 4rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+    animation: bounceIn 0.6s ease;
+  }
+
+  .modal-title {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .modal-message {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .modal-close-btn {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
+    padding: 12px 30px;
+    border-radius: calc(var(--radius) * 0.5);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .modal-close-btn:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.2)
+    );
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-form {
+      padding: 30px 20px;
+    }
+
+    .modal {
+      padding: 30px 20px;
+    }
+
+    .modal-icon {
+      font-size: 3rem;
+    }
+
+    .modal-title {
+      font-size: 1.3rem;
+    }
+  }
+</style>

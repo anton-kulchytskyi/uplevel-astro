@@ -1,0 +1,174 @@
+---
+export interface Props {
+  data: {
+    title: string;
+    description?: string;
+    items: Array<{
+      label: string;
+      value: string;
+      href?: string;
+    }>;
+    map: {
+      title?: string;
+      iframeSrc: string;
+    };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="contacts">
+  <div class="contacts-grid">
+    <!-- Left: contacts -->
+    <div class="contacts-card">
+      <h2 class="contacts-title">{data.title}</h2>
+      {data.description && <p class="contacts-desc">{data.description}</p>}
+
+      <ul class="contacts-list">
+        {
+          data.items.map((item) => (
+            <li class="contact-row">
+              <span class="contact-label">{item.label}</span>
+              {item.href ? (
+                <a class="contact-value" href={item.href}>
+                  {item.value}
+                </a>
+              ) : (
+                <span class="contact-value">{item.value}</span>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Right: map -->
+    <div class="map-card" aria-label={data.map.title ?? 'Map'}>
+      <iframe
+        class="map-iframe"
+        src={data.map.iframeSrc}
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title={data.map.title ?? 'Google Map'}></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacts {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* desktop: 1/2 */
+    gap: 30px;
+    align-items: start;
+  }
+
+  .contacts-card,
+  .map-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+  }
+
+  .contacts-card {
+    padding: 28px 24px;
+  }
+
+  .contacts-title {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+  }
+
+  .contacts-desc {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 22px 0;
+    line-height: 1.6;
+  }
+
+  .contacts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  .contact-row {
+    display: grid;
+    gap: 6px;
+    padding: 14px 12px;
+    border-radius: calc(var(--radius) * 0.6);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .contact-label {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .contact-value {
+    color: var(--color-white);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+  }
+
+  a.contact-value:hover {
+    text-decoration: underline;
+  }
+
+  .map-card {
+    position: relative;
+    min-height: 420px;
+  }
+
+  .map-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    display: block;
+  }
+
+  /* Tablet & below: stack */
+  @media (max-width: 1023px) {
+    .contacts-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .map-card {
+      min-height: 360px;
+    }
+
+    .map-iframe {
+      min-height: 360px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contacts {
+      padding: 30px 16px 60px;
+    }
+
+    .contacts-title {
+      font-size: 1.4rem;
+    }
+  }
+</style>
