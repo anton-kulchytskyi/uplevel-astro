@@ -6,6 +6,7 @@ import { fileURLToPath, URL } from 'url';
 export default defineConfig({
   output: 'static',
   site: 'https://anton-kulchytskyi.github.io/',
+  base: '/',
   vite: {
     resolve: {
       alias: {
