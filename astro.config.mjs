@@ -5,8 +5,8 @@ import { fileURLToPath, URL } from 'url';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://anton-kulchytskyi.github.io/',
-  base: '/',
+  site: 'https://anton-kulchytskyi.github.io',
+  base: '/uplevel-astro',
   vite: {
     resolve: {
       alias: {
