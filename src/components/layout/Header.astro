@@ -1,7 +1,7 @@
 ---
-import DesktopNav from '@/components/sections/DesktopNav.astro';
 import Logo from '@/components/ui/Logo.astro';
 import Certifications from '@/components/ui/Certifications.astro';
+import DesktopNav from '@/components/ui/DesktopNav.astro';
 ---
 
 <header class="header">
@@ -43,6 +43,12 @@ import Certifications from '@/components/ui/Certifications.astro';
       padding: 0.5rem 0.75rem;
       flex-wrap: nowrap;
       min-height: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-container {
+      padding: var(--spacing-mobile);
     }
   }
 </style>

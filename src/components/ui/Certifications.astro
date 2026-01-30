@@ -87,9 +87,9 @@ const { show247 = true, variant = 'header' } = Astro.props;
   @media (max-width: 767px) {
     .certifications--header {
       position: absolute;
-      right: 1rem;
+      right: 0.5rem;
       top: 1.25rem;
-      gap: 0.5rem;
+      gap: 0.3rem;
       z-index: 100;
     }
 
@@ -104,19 +104,18 @@ const { show247 = true, variant = 'header' } = Astro.props;
     }
   }
 
-  @media (max-width: 460px) {
+  @media (max-width: 480px) {
     .certifications--header {
-      gap: 0.4rem;
+      gap: 0.2rem;
     }
-
     .certifications--header .certification-logo {
-      height: 28px;
+      height: 24px;
     }
 
     .certifications--header .badge-24-7 {
-      width: 28px;
-      height: 28px;
-      font-size: 0.5rem;
+      width: 24px;
+      height: 24px;
+      font-size: 0.45rem;
     }
   }
 

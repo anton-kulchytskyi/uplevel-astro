@@ -1,8 +1,9 @@
 ---
+import Hero from '@/components/sections/shared/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '@/components/sections/Hero.astro';
-import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection.astro';
+
 import pageContent from '@/data/home.json';
+import WhyChooseUsSection from '@/components/sections/home/WhyChooseUsSection.astro';
 ---
 
 <BaseLayout seoData={pageContent.seo} showBreadcrumbs={false}>

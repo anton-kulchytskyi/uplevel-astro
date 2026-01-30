@@ -4,8 +4,13 @@
   --color-white: #fafbff;
   --color-light-gray: #808080;
   --spacing: 1rem;
+  --spacing-mobile: 0.5rem;
   --radius: 1rem;
   color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,4 +29,57 @@ body {
 main {
   margin: 2rem var(--spacing);
   flex: 1;
+}
+
+@keyframes slide-from-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-top {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+::view-transition-old(root) {
+  animation: slide-to-top 4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-new(root) {
+  animation: slide-from-bottom 4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(header),
+::view-transition-new(header),
+::view-transition-old(footer),
+::view-transition-new(footer) {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: fade 0.2s ease-in-out;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

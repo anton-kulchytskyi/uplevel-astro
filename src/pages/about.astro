@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '@/components/sections/Hero.astro';
-import MainStory from '@/components/sections/MainStory.astro';
-import ValuesSection from '@/components/sections/ValuesSection.astro';
-import LocationSection from '@/components/sections/LocationSection.astro';
-import CtaSection from '@/components/sections/CtaSection.astro';
+import Hero from '@/components/sections/shared/Hero.astro';
+import MainStory from '@/components/sections/about/MainStory.astro';
+import ValuesSection from '@/components/sections/about/ValuesSection.astro';
+import LocationSection from '@/components/sections/about/LocationSection.astro';
+import AboutCta from '@/components/sections/about/AboutCta.astro';
 import SectionDivider from '@/components/ui/SectionDivider.astro';
 import pageContent from '@/data/about.json';
 ---
@@ -14,10 +14,7 @@ import pageContent from '@/data/about.json';
   <MainStory paragraphs={pageContent.mainStory} />
   <ValuesSection data={pageContent.values} />
   <SectionDivider />
-
   <LocationSection data={pageContent.location} />
-
   <SectionDivider />
-
-  <CtaSection data={pageContent.cta} />
+  <AboutCta data={pageContent.cta} />
 </BaseLayout>

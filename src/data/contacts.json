@@ -1,8 +1,13 @@
 {
   "seo": {
     "title": "Contact Us | Uplevel Restoration",
-    "description": "Contact Uplevel Restoration in Saskatoon. We’re available 24/7 for emergency response and our office is open Monday–Friday, 9:00 AM–5:00 PM.",
-    "keywords": "Uplevel Restoration contact, Saskatoon restoration phone, emergency restoration 24/7, office hours, water fire mold smoke"
+    "description": "Contact Uplevel Restoration in Saskatoon. We’re available 24/7 for emergency response and our office is open Monday–Friday, 8:00 AM–5:00 PM.",
+    "keywords": "Uplevel Restoration contact, Saskatoon restoration phone, emergency restoration 24/7, office hours, water fire mold smoke",
+    "ogTitle": "Contact Uplevel Restoration - 24/7 Emergency Restoration Services",
+    "ogDescription": "Get in touch with Uplevel Restoration for 24/7 emergency property restoration services in Saskatoon. Office hours Mon–Fri, 8 AM–5 PM.",
+    "ogType": "website",
+    "ogUrl": "https://uplevelcorp.ca/contacts/",
+    "ogImage": "https://uplevelcorp.ca/og-cover.png"
   },
   "hero": {
     "title": "Contact Us",

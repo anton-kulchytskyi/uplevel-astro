@@ -44,5 +44,9 @@
       "url": "https://www.facebook.com/uplevelcorp/",
       "icon": "Facebook"
     }
-  ]
+  ],
+  "cta": {
+    "text": "Get in Touch",
+    "link": "/get-in-touch"
+  }
 }

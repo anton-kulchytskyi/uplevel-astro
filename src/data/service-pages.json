@@ -3,7 +3,12 @@
     "seo": {
       "title": "24/7 Emergency Restoration Services Saskatoon | Uplevel Restoration",
       "description": "Round-the-clock emergency restoration services in Saskatoon. Our certified team provides immediate response for water damage, fire damage, and property disasters. Call now!",
-      "keywords": "emergency restoration Saskatoon, 24/7 restoration, rapid response, property emergency, disaster response"
+      "keywords": "emergency restoration Saskatoon, 24/7 restoration, rapid response, property emergency, disaster response",
+      "ogTitle": "24/7 Emergency Restoration Services in Saskatoon | Uplevel Restoration",
+      "ogDescription": "Uplevel Restoration offers 24/7 emergency restoration services in Saskatoon. Our certified team responds quickly to water damage, fire damage, and other property emergencies.",
+      "ogType": "website",
+      "ogUrl": "https://uplevelcorp.ca/services/emergency-restoration/",
+      "ogImage": "https://uplevelcorp.ca/og-cover.png"
     },
     "hero": {
       "title": "Emergency Restoration (24/7)",
@@ -63,7 +68,12 @@
     "seo": {
       "title": "Water Damage Restoration Services Saskatoon | Uplevel Restoration",
       "description": "Professional water damage restoration in Saskatoon. Expert water extraction, drying, and dehumidification services. We handle floods, leaks, and storm damage 24/7.",
-      "keywords": "water damage restoration Saskatoon, flood cleanup, water extraction, structural drying, leak repair"
+      "keywords": "water damage restoration Saskatoon, flood cleanup, water extraction, structural drying, leak repair",
+      "ogTitle": "Water Damage Restoration Services in Saskatoon | Uplevel Restoration",
+      "ogDescription": "Uplevel Restoration provides professional water damage restoration services in Saskatoon. Expert water extraction, drying, and dehumidification for floods, leaks, and storm damage.",
+      "ogType": "website",
+      "ogUrl": "https://uplevelcorp.ca/services/water-damage-restoration/",
+      "ogImage": "https://uplevelcorp.ca/og-cover.png"
     },
     "hero": {
       "title": "Water Damage Restoration",
@@ -123,7 +133,12 @@
     "seo": {
       "title": "Fire & Smoke Damage Restoration Saskatoon | Uplevel Restoration",
       "description": "Complete fire and smoke damage restoration in Saskatoon. Expert soot removal, odor elimination, and structural repairs. We restore your property after fire disasters.",
-      "keywords": "fire damage restoration Saskatoon, smoke damage cleanup, soot removal, fire reconstruction, odor elimination"
+      "keywords": "fire damage restoration Saskatoon, smoke damage cleanup, soot removal, fire reconstruction, odor elimination",
+      "ogTitle": "Fire & Smoke Damage Restoration in Saskatoon | Uplevel Restoration",
+      "ogDescription": "Uplevel Restoration provides complete fire and smoke damage restoration services in Saskatoon. Expert soot removal, odor elimination, and structural repairs after fire disasters.",
+      "ogType": "website",
+      "ogUrl": "https://uplevelcorp.ca/services/fire-smoke-damage-restoration/",
+      "ogImage": "https://uplevelcorp.ca/og-cover.png"
     },
     "hero": {
       "title": "Fire & Smoke Damage Restoration",
@@ -183,7 +198,12 @@
     "seo": {
       "title": "Mold Remediation Services Saskatoon | Uplevel Restoration",
       "description": "Professional mold inspection and remediation in Saskatoon. We identify moisture sources, eliminate mold growth, and prevent future contamination. Safe and thorough mold removal.",
-      "keywords": "mold remediation Saskatoon, mold removal, mold inspection, mold testing, black mold removal"
+      "keywords": "mold remediation Saskatoon, mold removal, mold inspection, mold testing, black mold removal",
+      "ogTitle": "Mold Remediation Services in Saskatoon | Uplevel Restoration",
+      "ogDescription": "Uplevel Restoration provides professional mold inspection and remediation services in Saskatoon. Safe and thorough mold removal to protect your property and health.",
+      "ogType": "website",
+      "ogUrl": "https://uplevelcorp.ca/services/mold-remediation/",
+      "ogImage": "https://uplevelcorp.ca/og-cover.png"
     },
     "hero": {
       "title": "Mold Remediation",
@@ -243,7 +263,12 @@
     "seo": {
       "title": "Contents & Pack-Out Services Saskatoon | Uplevel Restoration",
       "description": "Professional contents pack-out and restoration services in Saskatoon. Secure inventory, cleaning, and storage of belongings during property restoration.",
-      "keywords": "contents pack-out Saskatoon, inventory services, contents cleaning, storage services, belongings restoration"
+      "keywords": "contents pack-out Saskatoon, inventory services, contents cleaning, storage services, belongings restoration",
+      "ogTitle": "Contents & Pack-Out Services in Saskatoon | Uplevel Restoration",
+      "ogDescription": "Uplevel Restoration provides professional contents pack-out and restoration services in Saskatoon. Secure inventory, cleaning, and storage of belongings during property restoration.",
+      "ogType": "website",
+      "ogUrl": "https://uplevelcorp.ca/services/contents-pack-out-services/",
+      "ogImage": "https://uplevelcorp.ca/og-cover.png"
     },
     "hero": {
       "title": "Contents & Pack-Out Services",
@@ -303,7 +328,12 @@
     "seo": {
       "title": "Reconstruction After Loss Services Saskatoon | Uplevel Restoration",
       "description": "Full-service reconstruction and rebuilding after property disasters in Saskatoon. From structural repairs to final finishes, we restore your property to pre-loss condition.",
-      "keywords": "reconstruction Saskatoon, property rebuilding, post-disaster reconstruction, structural repairs, home restoration"
+      "keywords": "reconstruction Saskatoon, property rebuilding, post-disaster reconstruction, structural repairs, home restoration",
+      "ogTitle": "Reconstruction After Loss Services in Saskatoon | Uplevel Restoration",
+      "ogDescription": "Uplevel Restoration provides full-service reconstruction and rebuilding services in Saskatoon. From structural repairs to final finishes, we restore your property to pre-loss condition.",
+      "ogType": "website",
+      "ogUrl": "https://uplevelcorp.ca/services/reconstruction-after-loss/",
+      "ogImage": "https://uplevelcorp.ca/og-cover.png"
     },
     "hero": {
       "title": "Completion You Can Rely On",

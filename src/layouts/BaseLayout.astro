@@ -26,6 +26,8 @@ export interface Props {
 }
 
 const { seoData, showBreadcrumbs = true } = Astro.props;
+
+console.log(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -37,21 +39,29 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     <title>{seoData.title}</title>
     <meta name="description" content={seoData.description} />
     <meta name="keywords" content={seoData.keywords} />
-    <meta property="og:title" content={seoData.ogTitle} />
-    <meta property="og:description" content={seoData.ogDescription} />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content={seoData.ogTitle ?? seoData.title} />
+    <meta
+      property="og:description"
+      content={seoData.ogDescription ?? seoData.description}
+    />
+    <meta property="og:type" content={seoData.ogType ?? 'website'} />
     <meta
       property="og:url"
-      content="https://uplevel-restoration.netlify.app/"
+      content={seoData.ogUrl ?? `https://uplevelcorp.ca${Astro.url.pathname}`}
     />
     <meta
       property="og:image"
-      content="https://uplevel-restoration.netlify.app/assets/images/logo.png"
+      content={seoData.ogImage ?? 'https://uplevelcorp.ca/og-cover.png'}
     />
 
     <meta
       name="apple-mobile-web-app-title"
       content="Uplevel Restoration - 24/7"
+    />
+
+    <link
+      rel="canonical"
+      href={seoData.ogUrl ?? `https://uplevelcorp.ca${Astro.url.pathname}`}
     />
 
     <link
@@ -82,65 +92,7 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
       <Footer />
     </div>
     <!-- The Web3Forms script ---->
-    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script is:inline src="https://web3forms.com/client/script.js" async defer
+    ></script>
   </body>
 </html>
-
-<style is:global>
-  @keyframes slide-from-bottom {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-to-top {
-    from {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-  }
-
-  ::view-transition-old(root) {
-    animation: slide-to-top 4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  ::view-transition-new(root) {
-    animation: slide-from-bottom 4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  ::view-transition-old(header),
-  ::view-transition-new(header),
-  ::view-transition-old(footer),
-  ::view-transition-new(footer) {
-    animation: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    ::view-transition-old(root),
-    ::view-transition-new(root) {
-      animation: fade 0.2s ease-in-out;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
