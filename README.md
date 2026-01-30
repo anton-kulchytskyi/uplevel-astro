@@ -1,46 +1,99 @@
-# Astro Starter Kit: Basics
+# Uplevel Restoration — Astro Website
 
-```sh
-npm create astro@latest -- --template basics
+Static website built with **Astro**, focused on SEO, performance, and simple hosting.
+All pages are generated as static HTML.
+
+## Tech Stack
+
+- **Astro** — Static site generator
+- **TypeScript (strict)** — Type safety
+- **CSS (no frameworks)** — Custom styling
+- **JSON-based content** — Easy content management
+
+## Quick Start
+
+### Clone & Install
+
+```bash
+git clone https://github.com/anton-kulchytskyi/uplevel-astro.git
+cd uplevel-astro
+
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Development
 
-## 🚀 Project Structure
+```bash
+npm run dev
 
-Inside of your Astro project, you'll see the following folders and files:
+npm run build
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Clean Build
 
-## 🧞 Commands
+```bash
+npm run clean
+npm run build
+```
 
-All commands are run from the root of the project, from a terminal:
+## Project Structure
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```
+uplevel-astro/
+├── public/              # Static assets (favicons, robots.txt, etc.)
+├── src/
+│   ├── assets/          # Images optimized by Astro
+│   ├── components/
+│   │   ├── icons/       # Icon components
+│   │   ├── layout/      # Header, Footer, MobileMenu
+│   │   ├── sections/    # Page sections (Hero, Services, etc.)
+│   │   └── ui/          # Reusable UI components
+│   ├── data/            # Content & SEO (JSON)
+│   ├── layouts/         # Page layouts
+│   ├── pages/           # Routes (auto-generated from file structure)
+│   └── styles/          # Global CSS
+└── dist/                # Build output (generated)
+```
 
-## 👀 Want to learn more?
+## Content Management
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+All page content and SEO metadata are stored in `/src/data/*.json`:
+
+- `home.json` — Homepage content
+- `about.json` — About page content
+- `services.json` — Services data
+- `navigation.json` — Site navigation
+- etc.
+
+## SEO
+
+- SEO metadata defined per page in JSON files
+- Automatic generation of sitemap (`/sitemap-index.xml`)
+- Open Graph images use absolute URLs
+
+## Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+Output: `/dist` folder with static HTML, CSS, JS, and optimized images.
+
+### Deploy via FTP
+
+1. Build the site: `npm run build`
+2. Upload all files from `/dist` to your web server (e.g., `public_html/`)
+3. Ensure files are in the root directory of the domain
+
+## Documentation
+
+- [Astro Documentation](https://docs.astro.build/)
+- [Astro SEO Guide](https://docs.astro.build/en/guides/seo/)
+
+## Support
+
+For issues or questions, please contact the developer.
