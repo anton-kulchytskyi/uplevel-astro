@@ -1,8 +1,8 @@
 ---
-// src/components/ui/Certifications.astro
 import { Image } from 'astro:assets';
 import iicrcLogo from '@/assets/images/certifications/iicrc-logo.jpg';
-import chamberLogo from '@/assets/images/certifications/chamber-logo.jpg';
+import chamberLogoHeader from '@/assets/images/certifications/chamber-logo-1.png';
+import chamberLogoFooter from '@/assets/images/certifications/chamber-logo-2.png';
 
 export interface Props {
   show247?: boolean;
@@ -22,7 +22,7 @@ const { show247 = true, variant = 'header' } = Astro.props;
     fetchpriority={variant === 'header' ? 'high' : 'auto'}
   />
   <Image
-    src={chamberLogo}
+    src={variant === 'header' ? chamberLogoHeader : chamberLogoFooter}
     alt="Saskatoon Chamber of Commerce Member"
     class="certification-logo"
     loading={variant === 'header' ? 'eager' : 'lazy'}
@@ -33,12 +33,11 @@ const { show247 = true, variant = 'header' } = Astro.props;
 </div>
 
 <style>
-  /* Header варіант */
   .certifications--header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    flex-wrap: nowrap; /* Завжди в один ряд */
+    flex-wrap: nowrap;
   }
 
   .certifications--header .certification-logo {
@@ -46,7 +45,7 @@ const { show247 = true, variant = 'header' } = Astro.props;
     width: auto;
     object-fit: contain;
     border-radius: 8px;
-    flex-shrink: 0; /* Не стискати логотипи */
+    flex-shrink: 0;
   }
 
   .certifications--header .badge-24-7 {
@@ -62,10 +61,9 @@ const { show247 = true, variant = 'header' } = Astro.props;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(15, 63, 143, 0.3);
     letter-spacing: 0.05em;
-    flex-shrink: 0; /* Не стискати badge */
+    flex-shrink: 0;
   }
 
-  /* Footer варіант - більші на ~33% */
   .certifications--footer {
     display: flex;
     align-items: center;
@@ -86,7 +84,6 @@ const { show247 = true, variant = 'header' } = Astro.props;
     transform: scale(1.05);
   }
 
-  /* Responsive для header - absolute positioning на малих екранах */
   @media (max-width: 767px) {
     .certifications--header {
       position: absolute;
@@ -123,10 +120,9 @@ const { show247 = true, variant = 'header' } = Astro.props;
     }
   }
 
-  /* Responsive для footer */
   @media (max-width: 768px) {
     .certifications--footer .certification-logo {
-      height: 50px; /* На планшетах трохи менше */
+      height: 50px;
     }
   }
 
@@ -136,7 +132,7 @@ const { show247 = true, variant = 'header' } = Astro.props;
     }
 
     .certifications--footer .certification-logo {
-      height: 44px; /* На мобільних ще менше */
+      height: 44px;
     }
   }
 </style>

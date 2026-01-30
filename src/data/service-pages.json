@@ -10,12 +10,12 @@
       "subtitle": "When disaster strikes, every minute counts. Our certified emergency response team is available around the clock to minimize damage and begin restoration immediately.",
       "backgroundImage": "emergency-restoration"
     },
-    "intro": "Property emergencies don't wait for business hours. That's why Uplevel Restoration offers 24/7 emergency response services throughout Saskatoon and surrounding areas. Whether it's a burst pipe at midnight or storm damage on a holiday, our team is ready to respond within 60 minutes to protect your property and begin the restoration process.",
+    "intro": "Property emergencies don't wait for business hours. That's why Uplevel Restoration offers 24/7 emergency response services throughout Saskatoon and surrounding areas. Whether it's a burst pipe in the middle of the night or storm damage on a holiday, our team is ready to respond quickly to protect your property and begin the restoration process.",
     "features": [
       {
         "icon": "🚨",
         "title": "Rapid Response",
-        "description": "Our emergency team responds within 60 minutes, day or night, to minimize damage and start mitigation immediately."
+        "description": "Our emergency team is ready to respond promptly, day or night, to minimize damage and begin mitigation as soon as possible."
       },
       {
         "icon": "📞",
@@ -140,17 +140,17 @@
       {
         "icon": "💨",
         "title": "Odor Elimination",
-        "description": "Advanced deodorization methods including ozone treatment and thermal fogging eliminate smoke odors completely."
+        "description": "Advanced deodorization methods including ozone treatment and thermal fogging eliminate smoke odors."
       },
       {
         "icon": "🏗️",
         "title": "Structural Repairs",
-        "description": "From minor repairs to complete reconstruction, we restore fire-damaged structures to their original condition."
+        "description": "Complete structural rebuilding including framing, roofing, and foundation repairs to restore integrity."
       },
       {
         "icon": "📦",
         "title": "Content Restoration",
-        "description": "We clean and restore smoke-damaged belongings, including furniture, clothing, electronics, and documents."
+        "description": "We clean and restore smoke-damaged belongings, including furniture, clothing, and electronics."
       }
     ],
     "process": {
@@ -265,7 +265,7 @@
       {
         "icon": "✨",
         "title": "Contents Cleaning",
-        "description": "Specialized cleaning for different item types including electronics, documents, and soft goods."
+        "description": "Specialized cleaning for different item types including electronics, and soft goods."
       },
       {
         "icon": "🏪",
@@ -306,33 +306,12 @@
       "keywords": "reconstruction Saskatoon, property rebuilding, post-disaster reconstruction, structural repairs, home restoration"
     },
     "hero": {
-      "title": "Reconstruction After Loss",
-      "subtitle": "Complete property reconstruction services to restore your home or business to pre-loss condition - or better.",
+      "title": "Completion You Can Rely On",
+      "subtitle": "Reconstruction is completed with attention to detail and reviewed before handover to ensure the space is ready for use.",
       "backgroundImage": "reconstruction"
     },
     "intro": "After emergency mitigation is complete, the next step is reconstruction. Uplevel Restoration provides full-service reconstruction to return your property to its original condition. As a single-source restoration company, we handle everything from initial damage assessment through final reconstruction, eliminating the need for multiple contractors and ensuring seamless project management.",
-    "features": [
-      {
-        "icon": "🏗️",
-        "title": "Structural Repairs",
-        "description": "Complete structural rebuilding including framing, roofing, and foundation repairs to restore integrity."
-      },
-      {
-        "icon": "🎨",
-        "title": "Interior Finishing",
-        "description": "Drywall, painting, flooring, and trim work to match or exceed your property's original condition."
-      },
-      {
-        "icon": "⚡",
-        "title": "Systems Restoration",
-        "description": "Electrical, plumbing, and HVAC repairs or upgrades as needed for complete property restoration."
-      },
-      {
-        "icon": "📑",
-        "title": "Project Management",
-        "description": "Single-source coordination means one team manages your entire project from start to finish."
-      }
-    ],
+    "features": [],
     "process": {
       "title": "Our Reconstruction Process",
       "steps": [

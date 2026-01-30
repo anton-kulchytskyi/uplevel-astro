@@ -6,7 +6,7 @@
   },
   "hero": {
     "title": "Contact Us",
-    "subtitle": "Reach out anytime for emergency service. For general inquiries, our office is open Monday–Friday, 9:00 AM–5:00 PM.",
+    "subtitle": "Reach out anytime for emergency service. For general inquiries, our office is open Monday–Friday, 8:00 AM–5:00 PM.",
     "backgroundImage": null,
     "showCta": false
   },
@@ -16,12 +16,12 @@
     "items": [
       {
         "label": "Email",
-        "value": "info@uplevelrestoration.ca",
-        "href": "mailto:info@uplevelrestoration.ca"
+        "value": "uplevel@uplevelcorp.ca",
+        "href": "mailto:uplevel@uplevelcorp.ca"
       },
       {
         "label": "Office Hours",
-        "value": "Mon–Fri, 9:00 AM – 5:00 PM"
+        "value": "Mon–Fri, 8:00 AM – 5:00 PM"
       },
       {
         "label": "Service Area",
@@ -30,7 +30,7 @@
     ],
     "map": {
       "title": "Our Location",
-      "iframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d613588.2746805913!2d-106.30711803107523!3d54.293254869448255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe966878a9fb18bb%3A0x93008860a6ead5ef!2sUplevel%20Restoration%20Corp.!5e0!3m2!1suk!2sua!4v1769101039232!5m2!1suk!2sua"
+      "iframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9594323.687329005!2d-116.23369191568158!3d54.049547294221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe966878a9fb18bb%3A0x93008860a6ead5ef!2sUplevel%20Restoration%20Corp.!5e0!3m2!1suk!2sua!4v1769586929956!5m2!1suk!2sua"
     }
   }
 }
