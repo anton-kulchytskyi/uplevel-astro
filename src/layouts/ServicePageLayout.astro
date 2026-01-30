@@ -1,5 +1,4 @@
 ---
-// src/layouts/ServicePageLayout.astro
 import BaseLayout from './BaseLayout.astro';
 import Hero from '@/components/sections/Hero.astro';
 import ServiceIntro from '@/components/sections/ServiceIntro.astro';
@@ -51,7 +50,11 @@ const heroData = {
 
   <section class="service-content-section">
     <ServiceIntro text={pageData.intro} />
-    <ServiceFeatures features={pageData.features} />
+    {
+      pageData.features.length > 0 && (
+        <ServiceFeatures features={pageData.features} />
+      )
+    }
     <ServiceProcess data={pageData.process} />
     <ServiceCta data={pageData.cta} />
   </section>

@@ -1,16 +1,6 @@
 ---
 import navData from '@/data/links.json';
 import SocialButtons from '@/components/ui/SocialButtons.astro';
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-const formatUrl = (url: string) => {
-  if (url.startsWith('http') || url.startsWith('#') || url.includes(':')) {
-    return url;
-  }
-
-  const cleanUrl = url.startsWith('/') ? url : `/${url}`;
-  return `${baseUrl}${cleanUrl}`;
-};
 ---
 
 <div class="mobile-menu" id="mobileMenu">
@@ -21,13 +11,35 @@ const formatUrl = (url: string) => {
           navData.main.map((link) => {
             if (link.title === 'Our Services') {
               return (
-                <li>
-                  <a
-                    href={formatUrl(link.url)}
-                    class="has-submenu"
-                    id="openServicesMenu"
-                  >
+                // <li>
+                //   <a href={link.url} class="has-submenu" id="openServicesMenu">
+                //     {link.title}
+                //     <svg
+                //       class="submenu-arrow"
+                //       viewBox="0 0 24 24"
+                //       fill="none"
+                //       stroke="currentColor"
+                //       stroke-width="4"
+                //       width="20"
+                //       height="20"
+                //     >
+                //       <polyline points="9 18 15 12 9 6" />
+                //     </svg>
+                //   </a>
+                // </li>
+                <li class="has-submenu-row">
+                  <a href={link.url} class="has-submenu-link">
                     {link.title}
+                  </a>
+
+                  <button
+                    type="button"
+                    class="submenu-toggle"
+                    id="openServicesMenu"
+                    aria-label="Open services submenu"
+                    aria-controls="mobileMenuServices"
+                    aria-expanded="false"
+                  >
                     <svg
                       class="submenu-arrow"
                       viewBox="0 0 24 24"
@@ -39,13 +51,13 @@ const formatUrl = (url: string) => {
                     >
                       <polyline points="9 18 15 12 9 6" />
                     </svg>
-                  </a>
+                  </button>
                 </li>
               );
             }
             return (
               <li>
-                <a href={formatUrl(link.url)}>{link.title}</a>
+                <a href={link.url}>{link.title}</a>
               </li>
             );
           })
@@ -63,7 +75,7 @@ const formatUrl = (url: string) => {
         {
           navData.services.map((link) => (
             <li>
-              <a href={formatUrl(link.url)}>{link.title}</a>
+              <a href={link.url}>{link.title}</a>
             </li>
           ))
         }
@@ -191,6 +203,33 @@ const formatUrl = (url: string) => {
     justify-content: space-between;
   }
 
+  .has-submenu-row {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+
+  .has-submenu-link {
+    flex: 1;
+    margin-right: 0;
+  }
+
+  .submenu-toggle {
+    width: 56px;
+    height: 44px; /* комфортний tap target */
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+  }
+
+  .submenu-toggle:hover {
+    color: #fff;
+  }
+
   .mobile-menu-social-buttons {
     width: 75%;
     margin: 0 auto;
@@ -224,7 +263,6 @@ const formatUrl = (url: string) => {
 </style>
 
 <script>
-  // DOM elements
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const hamburgerIcon = document.querySelector('.hamburger-icon');
   const backArrowIcon = document.querySelector('.back-arrow-icon');
@@ -233,17 +271,14 @@ const formatUrl = (url: string) => {
   const servicePanel = document.getElementById('mobileMenuServices');
   const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-  // State
   let isSubmenuOpen = false;
 
-  // Toggle main menu
   function toggleMainMenu() {
     const isActive = mainPanel?.classList.toggle('active');
     mobileMenuToggle?.classList.toggle('active', isActive);
     mobileMenuOverlay?.classList.toggle('active', isActive);
   }
 
-  // Open submenu
   function openSubmenu() {
     isSubmenuOpen = true;
     servicePanel?.classList.add('active');
@@ -251,15 +286,14 @@ const formatUrl = (url: string) => {
     backArrowIcon?.classList.add('active');
   }
 
-  // Close submenu
   function closeSubmenu() {
     isSubmenuOpen = false;
     servicePanel?.classList.remove('active');
     hamburgerIcon?.classList.remove('hidden');
     backArrowIcon?.classList.remove('active');
+    openServicesMenu?.setAttribute('aria-expanded', 'false');
   }
 
-  // Close everything
   function closeAll() {
     closeSubmenu();
     mainPanel?.classList.remove('active');
@@ -267,10 +301,10 @@ const formatUrl = (url: string) => {
     mobileMenuOverlay?.classList.remove('active');
   }
 
-  // Event listeners
   openServicesMenu?.addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     openSubmenu();
+    openServicesMenu.setAttribute('aria-expanded', 'true');
   });
 
   mobileMenuToggle?.addEventListener('click', () => {

@@ -36,7 +36,6 @@ const { data } = Astro.props;
     </form>
   </div>
 
-  <!-- Success Modal -->
   <div class="modal-overlay" id="successModal">
     <div
       class="modal"
@@ -55,7 +54,6 @@ const { data } = Astro.props;
 </section>
 
 <script is:inline>
-  // Phone number formatting function
   function formatPhoneNumber(phoneNumber) {
     const cleaned = phoneNumber.replace(/\D/g, '');
 
@@ -76,13 +74,11 @@ const { data } = Astro.props;
 
     if (!form || !phone || !modal || !closeBtn) return;
 
-    // Apply phone formatting on input
     phone.addEventListener('input', function (e) {
       const formatted = formatPhoneNumber(e.target.value);
       e.target.value = formatted;
     });
 
-    // Close modal and clear form
     function closeModal() {
       modal.classList.remove('show');
       setTimeout(() => form.reset(), 300);
@@ -123,15 +119,12 @@ const { data } = Astro.props;
       }
     });
 
-    // Close on button
     closeBtn.addEventListener('click', closeModal);
 
-    // Close on overlay click
     modal.addEventListener('click', function (e) {
       if (e.target === modal) closeModal();
     });
 
-    // Close on Escape
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modal.classList.contains('show')) {
         closeModal();
@@ -139,7 +132,6 @@ const { data } = Astro.props;
     });
   }
 
-  // Make sure it works with Astro navigation as well
   document.addEventListener('DOMContentLoaded', initGetInTouchForm);
   document.addEventListener('astro:page-load', initGetInTouchForm);
 </script>
@@ -244,7 +236,6 @@ const { data } = Astro.props;
     transform: translateY(-1px);
   }
 
-  /* Modal Styles */
   .modal-overlay {
     position: fixed;
     top: 0;

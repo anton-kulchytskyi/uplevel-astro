@@ -42,7 +42,6 @@ const { paragraphs } = Astro.props;
     margin-right: auto;
   }
 
-  /* Анімація появи */
   .story-card {
     animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards;
   }
@@ -54,7 +53,6 @@ const { paragraphs } = Astro.props;
     }
   }
 
-  /* Shine ефект на hover */
   .story-card::before {
     content: '';
     position: absolute;
@@ -112,7 +110,6 @@ const { paragraphs } = Astro.props;
     }
   }
 
-  /* Mobile Responsive */
   @media (max-width: 768px) {
     .main-story {
       margin: 1rem;
@@ -139,7 +136,6 @@ const { paragraphs } = Astro.props;
     }
   }
 
-  /* Якщо prefers-reduced-motion */
   @media (prefers-reduced-motion: reduce) {
     .story-card,
     .story-paragraph {

@@ -19,7 +19,7 @@
     {
       "id": "emergency-restoration",
       "title": "Emergency Restoration (24/7)",
-      "description": "When disaster strikes, every minute counts. Our certified emergency response team is available around the clock to minimize damage and begin restoration immediately. We respond within 60 minutes to protect your property.",
+      "description": "When disaster strikes, every minute counts. Our certified emergency response team is available around the clock to minimize damage and begin restoration immediately.",
       "url": "/services/emergency-restoration",
       "imageAlt": "Emergency restoration services - 24/7 rapid response team"
     },
@@ -34,7 +34,7 @@
     {
       "id": "fire-smoke",
       "title": "Fire & Smoke Damage Restoration",
-      "description": "Comprehensive fire damage restoration from emergency board-up to complete reconstruction. Our specialists handle soot removal, odor elimination, and structural repairs to restore your property after fire disasters.",
+      "description": "Comprehensive fire damage restoration from emergency board-up to complete reconstruction. Our specialists handle soot removal, odor elimination, to restore your property after fire disasters.",
       "url": "/services/fire-smoke-damage-restoration",
       "imageAlt": "Fire and smoke damage restoration services"
     },

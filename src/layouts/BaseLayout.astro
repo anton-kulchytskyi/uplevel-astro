@@ -1,6 +1,6 @@
 ---
 import '@/styles/global.css';
-import { fade, slide } from 'astro:transitions';
+import { slide } from 'astro:transitions';
 
 import Header from '@/components/layout/Header.astro';
 import MobileMenu from '@/components/layout/MobileMenu.astro';
@@ -54,36 +54,16 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
       content="Uplevel Restoration - 24/7"
     />
 
-    {/* Посилання на шрифти */}
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href={`${import.meta.env.BASE_URL}/favicon-96x96.png`}
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href={`${import.meta.env.BASE_URL}/favicon.svg`}
-    />
-    <link
-      rel="shortcut icon"
-      href={`${import.meta.env.BASE_URL}/favicon.ico`}
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href={`${import.meta.env.BASE_URL}/apple-touch-icon.png`}
-    />
-    <link
-      rel="manifest"
-      href={`${import.meta.env.BASE_URL}/site.webmanifest`}
-    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <div transition:persist="header">
@@ -101,13 +81,12 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     <div transition:persist="footer">
       <Footer />
     </div>
-    <!-- -- Step 2: Add the Web3Forms script ---->
+    <!-- The Web3Forms script ---->
     <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>
 
 <style is:global>
-  /* Кастомні анімації для view transitions */
   @keyframes slide-from-bottom {
     from {
       transform: translateY(100%);
@@ -130,7 +109,6 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     }
   }
 
-  /* Застосування анімацій */
   ::view-transition-old(root) {
     animation: slide-to-top 4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -139,7 +117,6 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     animation: slide-from-bottom 4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Для елементів з transition:persist анімація не потрібна */
   ::view-transition-old(header),
   ::view-transition-new(header),
   ::view-transition-old(footer),
@@ -147,7 +124,6 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     animation: none;
   }
 
-  /* Accessibility - вимикаємо анімації для користувачів з motion sickness */
   @media (prefers-reduced-motion: reduce) {
     ::view-transition-old(root),
     ::view-transition-new(root) {
@@ -164,7 +140,6 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     }
   }
 
-  /* Плавність при завантаженні */
   html {
     scroll-behavior: smooth;
   }

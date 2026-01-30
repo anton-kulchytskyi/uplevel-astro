@@ -1,6 +1,4 @@
 ---
-// src/components/sections/ServiceCta.astro
-import Phone from '@/components/icons/Phone.astro';
 import CtaButton from '../ui/CtaButton.astro';
 
 export interface Props {
@@ -17,15 +15,6 @@ const { data } = Astro.props;
   <h2>{data.title}</h2>
   <p>{data.subtitle}</p>
   <CtaButton secondary />
-  <!-- <div class="cta-buttons">
-    <a href="tel:+13068505955" class="cta-btn cta-btn-primary">
-      <Phone class="cta-icon" />
-      Call Now: 306-850-5955
-    </a>
-    <a href="/contact" class="cta-btn cta-btn-secondary">
-      Get Free Consultation
-    </a>
-  </div> -->
 </div>
 
 <style>

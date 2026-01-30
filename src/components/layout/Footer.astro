@@ -49,7 +49,6 @@ const currentYear = new Date().getFullYear();
     overflow: hidden;
   }
 
-  /* Декоративні елементи */
   .site-footer::before {
     content: '';
     position: absolute;
@@ -90,7 +89,6 @@ const currentYear = new Date().getFullYear();
     z-index: 2;
   }
 
-  /* Top Row - 2 main columns: Certifications | Navigation */
   .footer-top-row {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -112,14 +110,12 @@ const currentYear = new Date().getFullYear();
     letter-spacing: 0.05em;
   }
 
-  /* Navigation grid - 2 columns inside */
   .footer-navigation {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
 
-  /* Divider */
   .footer-divider {
     width: 100%;
     height: 1px;
@@ -132,7 +128,6 @@ const currentYear = new Date().getFullYear();
     margin: 2rem 0;
   }
 
-  /* Bottom Row - 3 columns */
   .footer-bottom-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -151,23 +146,17 @@ const currentYear = new Date().getFullYear();
     justify-content: flex-end;
   }
 
-  /* ========================================
-     TABLET: 768px - 1023px
-     Layout: Certs full width, then 2 columns nav, then bottom stacked
-  ======================================== */
   @media (min-width: 768px) and (max-width: 1023px) {
     .footer-container {
       padding: 0 1.5rem;
     }
 
-    /* Top row: full width */
     .footer-top-row {
       grid-template-columns: 1fr;
       gap: 2rem;
       padding-bottom: 1.5rem;
     }
 
-    /* Certifications на всю ширину зверху */
     .footer-certifications {
       align-items: center;
       text-align: center;
@@ -175,18 +164,15 @@ const currentYear = new Date().getFullYear();
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Navigation залишається 2 колонки */
     .footer-navigation {
       gap: 2.5rem;
       text-align: center;
     }
 
-    /* Center nav items */
     .footer-navigation :global(.footer-nav-column) {
       text-align: center;
     }
 
-    /* Bottom row: stacked */
     .footer-bottom-row {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -199,10 +185,6 @@ const currentYear = new Date().getFullYear();
     }
   }
 
-  /* ========================================
-     MOBILE: 481px - 767px
-     Layout: Everything single column centered
-  ======================================== */
   @media (min-width: 481px) and (max-width: 767px) {
     .site-footer {
       padding: 2.5rem 0 1.5rem;
@@ -213,7 +195,6 @@ const currentYear = new Date().getFullYear();
       padding: 0 1.5rem;
     }
 
-    /* Top row: single column */
     .footer-top-row {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -227,7 +208,6 @@ const currentYear = new Date().getFullYear();
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Navigation: single column, centered */
     .footer-navigation {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -242,7 +222,6 @@ const currentYear = new Date().getFullYear();
       margin: 1.5rem 0;
     }
 
-    /* Bottom row: single column */
     .footer-bottom-row {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -254,17 +233,12 @@ const currentYear = new Date().getFullYear();
       justify-content: center;
     }
 
-    /* Social buttons менше */
     .footer-social :global(.social-icon-container) {
       width: 45px;
       height: 45px;
     }
   }
 
-  /* ========================================
-     SMALL MOBILE: <= 480px
-     Layout: Everything stacked and compact
-  ======================================== */
   @media (max-width: 480px) {
     .site-footer {
       padding: 2rem 0 1.5rem;
@@ -275,7 +249,6 @@ const currentYear = new Date().getFullYear();
       padding: 0 1rem;
     }
 
-    /* Top row: single column, compact */
     .footer-top-row {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -294,7 +267,6 @@ const currentYear = new Date().getFullYear();
       font-size: 1rem;
     }
 
-    /* Navigation: single column, centered, compact */
     .footer-navigation {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -318,7 +290,6 @@ const currentYear = new Date().getFullYear();
       margin: 1rem 0;
     }
 
-    /* Bottom row: single column, compact */
     .footer-bottom-row {
       grid-template-columns: 1fr;
       gap: 1.25rem;
@@ -334,7 +305,6 @@ const currentYear = new Date().getFullYear();
       font-size: 0.85rem;
     }
 
-    /* Address менший текст */
     .footer-bottom-row :global(.address-line) {
       font-size: 0.9rem;
     }
@@ -343,7 +313,6 @@ const currentYear = new Date().getFullYear();
       font-size: 0.9rem;
     }
 
-    /* Social buttons компактні */
     .footer-social :global(.social-media-container) {
       gap: 1rem;
       padding: 0.5rem;
@@ -355,120 +324,9 @@ const currentYear = new Date().getFullYear();
     }
   }
 
-  /* ========================================
-     ACCESSIBILITY: Reduced Motion
-  ======================================== */
   @media (prefers-reduced-motion: reduce) {
     .site-footer::before {
       animation: none;
     }
   }
 </style>
-
-<!-- <style>
-  .site-footer {
-    position: relative;
-    background: linear-gradient(
-      135deg,
-      rgba(43, 43, 43, 0.95) 0%,
-      rgba(15, 63, 143, 0.9) 50%,
-      rgba(43, 43, 43, 0.95) 100%
-    );
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 3rem 0 2rem;
-    margin-top: 4rem;
-    overflow: hidden;
-  }
-
-  .site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(
-        circle at 20% 80%,
-        rgba(15, 63, 143, 0.3) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 20%,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 50%
-      );
-    pointer-events: none;
-    animation: float 8s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
-  }
-
-  .footer-top-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    padding-bottom: 2rem;
-  }
-
-  .footer-certifications {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .footer-section-title {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-    letter-spacing: 0.05em;
-  }
-
-  .footer-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    margin: 2rem 0;
-  }
-
-  .footer-bottom-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .footer-copyright p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin: 0;
-  }
-
-  .footer-social {
-    display: flex;
-    justify-content: flex-end;
-  }
-</style> -->
