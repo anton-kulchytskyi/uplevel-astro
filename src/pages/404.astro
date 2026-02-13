@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CtaButton from '@/components/ui/CtaButton.astro';
+import pageContent from '@/data/404.json';
+---
+
+<BaseLayout seoData={pageContent.seo} showBreadcrumbs={false}>
+  <section class="error-page">
+    <div class="error-content">
+      <h1 class="error-code">{pageContent.code}</h1>
+      <h2 class="error-title">{pageContent.title}</h2>
+      <p class="error-subtitle">
+        {pageContent.subtitle}
+      </p>
+      <div class="error-buttons">
+        <CtaButton text="Back to Home" href="/" />
+        <CtaButton text="Our Services" href="/services" secondary />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .error-content {
+    max-width: 600px;
+  }
+
+  .error-code {
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .error-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-white);
+    margin: 1rem 0;
+    font-weight: 600;
+  }
+
+  .error-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 2rem;
+    line-height: 1.6;
+  }
+  .error-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>
