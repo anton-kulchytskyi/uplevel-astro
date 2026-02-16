@@ -40,7 +40,11 @@ const showCta = data.showCta ?? true;
         alt={data.title.replace(/<[^>]*>/g, '')}
         class="hero-background"
         loading="eager"
+        fetchpriority="high"
         quality={85}
+        widths={[640, 828, 1200, 1920, 2560]}
+        sizes="100vw"
+        format="webp"
       />
     )
   }

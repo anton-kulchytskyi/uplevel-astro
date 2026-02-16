@@ -53,6 +53,10 @@ const { data } = Astro.props;
   </div>
 </section>
 
+<!-- The Web3Forms script ---->
+<script is:inline src="https://web3forms.com/client/script.js" async defer
+></script>
+
 <script is:inline>
   function formatPhoneNumber(phoneNumber) {
     const cleaned = phoneNumber.replace(/\D/g, '');

@@ -32,7 +32,9 @@ const bgImg = backgroundImage ? IMAGES[backgroundImage] : null;
         alt={title}
         class="feature-background"
         loading="lazy"
-        quality={80}
+        quality={75}
+        widths={[480, 640, 800, 1024]}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       />
     )
   }
