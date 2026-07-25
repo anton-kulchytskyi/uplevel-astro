@@ -31,7 +31,7 @@ const currentYear = new Date().getFullYear();
         <p class="footer-legal">
           {
             linksData.legal.map((link) => (
-              <a href={link.url} class="footer-legal-link">
+              <a href={link.url} class="footer-legal-link text-link">
                 {link.title}
               </a>
             ))
@@ -153,18 +153,12 @@ const currentYear = new Date().getFullYear();
   .footer-copyright .footer-legal {
     display: flex;
     gap: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
+  /* Hover comes from the shared .text-link class in BaseLayout. */
   .footer-legal-link {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .footer-legal-link:hover {
-    color: var(--color-white);
-    text-decoration: underline;
+    font-size: 0.9rem;
   }
 
   .footer-social {
@@ -207,6 +201,12 @@ const currentYear = new Date().getFullYear();
 
     .footer-copyright,
     .footer-social {
+      justify-content: center;
+    }
+
+    /* The copyright text is centred by text-align on the row, but the legal
+       links are a flex row and need centring of their own. */
+    .footer-copyright .footer-legal {
       justify-content: center;
     }
   }
@@ -256,6 +256,12 @@ const currentYear = new Date().getFullYear();
 
     .footer-copyright,
     .footer-social {
+      justify-content: center;
+    }
+
+    /* The copyright text is centred by text-align on the row, but the legal
+       links are a flex row and need centring of their own. */
+    .footer-copyright .footer-legal {
       justify-content: center;
     }
 
@@ -324,6 +330,12 @@ const currentYear = new Date().getFullYear();
 
     .footer-copyright,
     .footer-social {
+      justify-content: center;
+    }
+
+    /* The copyright text is centred by text-align on the row, but the legal
+       links are a flex row and need centring of their own. */
+    .footer-copyright .footer-legal {
       justify-content: center;
     }
 
