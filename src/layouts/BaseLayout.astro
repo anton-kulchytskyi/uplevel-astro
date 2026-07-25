@@ -13,6 +13,7 @@ import EmergencyBanner from '../components/layout/EmergencyBanner.astro';
 import ToggleButton from '@/components/layout/ToggleButton.astro';
 import Breadcrumbs from '@/components/layout/Breadcrumbs.astro';
 import Footer from '@/components/layout/Footer.astro';
+import GoogleTag from '@/components/layout/GoogleTag.astro';
 
 export interface SeoData {
   title: string;
@@ -72,6 +73,8 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    {import.meta.env.PROD && <GoogleTag />}
 
     <style is:inline>
       :root {

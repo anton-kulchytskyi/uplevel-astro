@@ -110,6 +110,14 @@ const { data } = Astro.props;
         const data = await response.json();
 
         if (response.ok) {
+          // Google Ads conversion — the form submits via fetch, so there is no
+          // "thank you" page to carry the event snippet.
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+              send_to: 'AW-18332963616/IZYlCMOds9UcEKCm66VE',
+            });
+          }
+
           modal.classList.add('show');
           form.reset();
         } else {

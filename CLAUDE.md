@@ -64,6 +64,8 @@ No global stylesheet file exists (the README's `src/styles/` is stale). Design t
 
 Only two components ship script: `layout/MobileMenu.astro` (plain module `<script>`, DOM-id based panel toggling) and `sections/form/GetInTouchForm.astro`. Both are vanilla — no framework islands anywhere.
 
+The Google Ads tag lives in `layout/GoogleTag.astro` and is rendered from `BaseLayout`'s `<head>` behind `{import.meta.env.PROD && <GoogleTag />}`, so it ships on all pages of a build but never loads under `astro dev` (`npm run preview` serves a build, so it *is* present there). There is no thank-you page, so the conversion event fires from the contact form's success branch instead, guarded by `typeof window.gtag === 'function'` so a blocked or absent tag cannot break submission.
+
 The contact form posts to **Web3Forms** (`api.web3forms.com/submit`) with the public access key inlined in `<script is:inline>`, plus an hCaptcha container; it shows a success modal and formats the phone field as you type. Its init runs on both `DOMContentLoaded` and `astro:page-load`. Form fields are data-driven from `src/data/get-in-touch.json` and rendered by `ui/FormField.astro`.
 
 ### View transitions (currently inert)

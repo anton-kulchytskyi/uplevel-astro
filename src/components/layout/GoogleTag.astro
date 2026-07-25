@@ -1,0 +1,20 @@
+---
+// Google Ads conversion tracking. Rendered only in production builds — see
+// BaseLayout — so local development never fires real conversions.
+// The matching conversion event lives in sections/form/GetInTouchForm.astro.
+const GOOGLE_ADS_ID = 'AW-18332963616';
+---
+
+<!-- Google tag (gtag.js) -->
+<script
+  is:inline
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}></script>
+<script is:inline define:vars={{ GOOGLE_ADS_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', GOOGLE_ADS_ID);
+</script>
