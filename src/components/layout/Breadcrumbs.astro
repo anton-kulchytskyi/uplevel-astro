@@ -40,7 +40,9 @@ if (currentPath !== '/') {
             <li class="breadcrumbs-item">
               {!isLast && crumb.url ? (
                 <>
-                  <a href={crumb.url}>{crumb.title}</a>
+                  <a href={crumb.url} class="text-link">
+                    {crumb.title}
+                  </a>
                   <span class="breadcrumbs-separator">›</span>
                 </>
               ) : (
@@ -76,16 +78,7 @@ if (currentPath !== '/') {
     font-size: 1rem;
   }
 
-  .breadcrumbs-item a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .breadcrumbs-item a:hover {
-    color: var(--color-white);
-    text-decoration: underline;
-  }
+  /* Link colour and hover come from the shared .text-link class. */
 
   .breadcrumbs-item .current {
     color: var(--color-white);

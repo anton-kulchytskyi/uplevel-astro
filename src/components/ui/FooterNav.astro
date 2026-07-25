@@ -16,7 +16,7 @@ const { title, links } = Astro.props;
     {
       links.map((link) => (
         <li>
-          <a href={link.url} class="footer-link">
+          <a href={link.url} class="footer-link text-link">
             {link.title}
           </a>
         </li>
@@ -49,32 +49,8 @@ const { title, links } = Astro.props;
     gap: 0.75rem;
   }
 
+  /* Hover treatment comes from the shared .text-link class in BaseLayout. */
   .footer-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    position: relative;
-  }
-
-  .footer-link::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
-    transition: width 0.3s ease;
-  }
-
-  .footer-link:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(5px);
-  }
-
-  .footer-link:hover::before {
-    width: 100%;
   }
 </style>

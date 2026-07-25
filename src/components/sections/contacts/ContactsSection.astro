@@ -30,7 +30,7 @@ const { data } = Astro.props;
             <li class="contact-row">
               <span class="contact-label">{item.label}</span>
               {item.href ? (
-                <a class="contact-value" href={item.href}>
+                <a class="contact-value text-link" href={item.href}>
                   {item.value}
                 </a>
               ) : (
@@ -129,9 +129,7 @@ const { data } = Astro.props;
     word-break: break-word;
   }
 
-  a.contact-value:hover {
-    text-decoration: underline;
-  }
+  /* Hover comes from the shared .text-link class in BaseLayout. */
 
   .map-card {
     position: relative;

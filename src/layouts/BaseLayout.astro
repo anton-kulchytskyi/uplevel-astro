@@ -110,6 +110,54 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
         flex: 1;
       }
 
+      /* Shared hover treatment for text links — footer, breadcrumbs, contacts.
+         Nav menus and buttons keep their own, deliberately different styles. */
+      .text-link {
+        position: relative;
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .text-link::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.8),
+          transparent
+        );
+        transition: width 0.3s ease;
+      }
+
+      .text-link:hover {
+        color: var(--color-white);
+        transform: translateX(5px);
+      }
+
+      .text-link:hover::before {
+        width: 100%;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .text-link,
+        .text-link::before {
+          transition: none;
+        }
+
+        .text-link:hover {
+          transform: none;
+          text-decoration: underline;
+        }
+      }
+
       @keyframes slide-from-bottom {
         from {
           transform: translateY(100%);
