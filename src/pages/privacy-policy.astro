@@ -1,0 +1,15 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/shared/Hero.astro';
+import LegalContent from '@/components/sections/legal/LegalContent.astro';
+import pageContent from '@/data/privacy-policy.json';
+---
+
+<BaseLayout seoData={pageContent.seo}>
+  <Hero data={pageContent.hero} />
+  <LegalContent
+    lastUpdated={pageContent.lastUpdated}
+    intro={pageContent.intro}
+    sections={pageContent.sections}
+  />
+</BaseLayout>

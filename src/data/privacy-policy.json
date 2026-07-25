@@ -1,0 +1,128 @@
+{
+  "seo": {
+    "title": "Privacy Policy | Uplevel Restoration",
+    "description": "How Uplevel Restoration collects, uses, and protects personal information submitted through uplevelcorp.ca.",
+    "keywords": "privacy policy, personal information, PIPEDA, Uplevel Restoration",
+    "ogTitle": "Privacy Policy | Uplevel Restoration",
+    "ogDescription": "How Uplevel Restoration collects, uses, and protects personal information submitted through uplevelcorp.ca.",
+    "ogType": "website",
+    "ogUrl": "https://uplevelcorp.ca/privacy-policy/",
+    "ogImage": "https://uplevelcorp.ca/og-cover.png",
+    "noindex": true
+  },
+  "hero": {
+    "title": "Privacy Policy",
+    "subtitle": "How we handle the information you share with us",
+    "backgroundImage": null,
+    "showCta": false
+  },
+  "lastUpdated": "[EFFECTIVE DATE — set on the day this is published]",
+  "intro": [
+    "This policy explains what personal information Uplevel Restoration collects through uplevelcorp.ca, why we collect it, who we share it with, and the choices you have. It applies to this website only — not to information you give us over the phone, by email, or on site during a restoration job.",
+    "We follow Canada's Personal Information Protection and Electronic Documents Act (PIPEDA)."
+  ],
+  "sections": [
+    {
+      "title": "Who we are",
+      "paragraphs": [
+        "[LEGAL COMPANY NAME — e.g. \"Uplevel Corp.\" or the exact registered entity] operates this website and is responsible for the personal information described here.",
+        "Mailing address: [FULL BUSINESS ADDRESS — CONFIRM]",
+        "Privacy contact: uplevel@uplevelcorp.ca — [CONFIRM whether a different address should receive privacy requests]"
+      ]
+    },
+    {
+      "title": "Information you give us",
+      "paragraphs": [
+        "When you submit the contact form on our \"Get in Touch\" page, we collect the information you type into it:"
+      ],
+      "items": [
+        "Your name",
+        "Your email address",
+        "Your phone number",
+        "The message describing your situation"
+      ],
+      "footnote": "We do not ask for payment details, insurance policy numbers, or identification documents through this website. Please do not include them in the form message."
+    },
+    {
+      "title": "Information collected automatically",
+      "paragraphs": [
+        "Like most websites, ours receives standard technical information when you visit — such as your IP address, browser type, device type, the pages you view, and the site or ad that referred you. Our advertising and anti-spam providers (listed below) collect this on our behalf using cookies and similar technologies.",
+        "We do not run general website analytics such as Google Analytics, and we do not build profiles of individual visitors ourselves."
+      ]
+    },
+    {
+      "title": "How we use your information",
+      "items": [
+        "To respond to your enquiry and provide the restoration services you ask about",
+        "To contact you about an active or prospective job",
+        "To protect the contact form from automated spam and abuse",
+        "To measure whether our advertising is reaching people who need our services",
+        "[CONFIRM: do you want to send follow-ups, newsletters, or promotional messages to people who submit the form? If yes, it must be stated here — and consent must be obtained.]"
+      ]
+    },
+    {
+      "title": "Service providers we share it with",
+      "paragraphs": [
+        "We do not sell your personal information. We share it only with the providers that make this website work:"
+      ],
+      "items": [
+        "Web3Forms — delivers contact form submissions to our email. Everything you enter in the form passes through and is stored on their systems.",
+        "hCaptcha (Intuition Machines, Inc.) — spam protection on the contact form. It receives technical information about your device and browsing behaviour to tell humans from bots.",
+        "Google Ads (Google LLC) — advertising and conversion measurement. It records that a form submission happened and, where cookies allow, connects it to an ad you clicked. The form's contents are not sent to Google.",
+        "[WEB HOSTING PROVIDER — CONFIRM name; the host stores the website files and server logs]"
+      ],
+      "footnote": "These providers operate outside Canada, including in the United States, so your information may be stored or processed there and may be accessible to foreign authorities under the laws of those countries. [CONFIRM with the hosting provider where the site and its logs are actually stored.]"
+    },
+    {
+      "title": "Cookies and advertising",
+      "paragraphs": [
+        "This site sets cookies through Google Ads to measure conversions and, if enabled in the ad account, to show you our ads on other sites. It sets no cookies of its own beyond what these providers require.",
+        "You can control this in several ways: adjust your Google ad settings at myadcenter.google.com, opt out of interest-based advertising at youradchoices.ca, or block and delete cookies in your browser settings. Blocking these cookies does not affect your ability to use the site or submit the form.",
+        "Fonts on this site are served from our own server, so viewing a page does not send a request to any font provider."
+      ]
+    },
+    {
+      "title": "How long we keep it",
+      "paragraphs": [
+        "[RETENTION PERIOD — CONFIRM. For example: \"Enquiries that do not become jobs are deleted after 12 months. Records connected to completed work are kept for [X] years to meet insurance, warranty, and tax obligations.\" This should match what you actually do.]"
+      ]
+    },
+    {
+      "title": "How we protect it",
+      "paragraphs": [
+        "This site is served over an encrypted connection (HTTPS), and form submissions are transmitted encrypted. Access to enquiry emails is limited to [WHO HAS ACCESS — CONFIRM, e.g. \"the owner and office staff\"].",
+        "No method of transmission or storage is completely secure, and we cannot guarantee absolute security."
+      ]
+    },
+    {
+      "title": "Your rights",
+      "paragraphs": ["Under PIPEDA you may ask us to:"],
+      "items": [
+        "Tell you what personal information we hold about you and how it has been used",
+        "Correct information that is inaccurate or incomplete",
+        "Delete information we no longer need to keep",
+        "Withdraw your consent to being contacted for marketing purposes"
+      ],
+      "footnote": "Write to uplevel@uplevelcorp.ca and we will respond within 30 days. If you are not satisfied with our response, you may contact the Office of the Privacy Commissioner of Canada at priv.gc.ca."
+    },
+    {
+      "title": "Children",
+      "paragraphs": [
+        "This website is intended for property owners and managers. We do not knowingly collect personal information from children. If you believe a child has submitted information through our form, contact us and we will delete it."
+      ]
+    },
+    {
+      "title": "Changes to this policy",
+      "paragraphs": [
+        "We may update this policy as our services or the tools we use change. The effective date at the top of the page shows when it was last revised. Material changes will be posted on this page."
+      ]
+    },
+    {
+      "title": "Contact us",
+      "paragraphs": [
+        "Questions about this policy or about the information we hold: uplevel@uplevelcorp.ca or [PHONE — confirm which number handles privacy enquiries].",
+        "Uplevel Restoration, [FULL BUSINESS ADDRESS — CONFIRM]"
+      ]
+    }
+  ]
+}

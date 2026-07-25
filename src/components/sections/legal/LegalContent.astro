@@ -1,0 +1,163 @@
+---
+export interface Props {
+  lastUpdated: string;
+  intro: string[];
+  sections: Array<{
+    title: string;
+    paragraphs?: string[];
+    items?: string[];
+    footnote?: string;
+  }>;
+}
+
+const { lastUpdated, intro, sections } = Astro.props;
+---
+
+<section class="legal">
+  <div class="legal-card">
+    <p class="legal-updated">Effective date: {lastUpdated}</p>
+
+    {intro.map((paragraph) => <p class="legal-intro">{paragraph}</p>)}
+
+    {
+      sections.map((section, index) => (
+        <article class="legal-section" style={`--delay: ${index * 0.05}s`}>
+          <h2 class="legal-heading">{section.title}</h2>
+
+          {section.paragraphs?.map((paragraph) => (
+            <p class="legal-paragraph">{paragraph}</p>
+          ))}
+
+          {section.items && (
+            <ul class="legal-list">
+              {section.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+
+          {section.footnote && <p class="legal-footnote">{section.footnote}</p>}
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .legal {
+    margin: 2rem auto;
+    max-width: 900px;
+  }
+
+  .legal-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards;
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .legal-updated {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .legal-intro {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 0 1rem;
+  }
+
+  .legal-section {
+    margin-top: 2.5rem;
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .legal-heading {
+    color: var(--color-white);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+  }
+
+  .legal-paragraph,
+  .legal-list li {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .legal-paragraph {
+    margin: 0 0 1rem;
+  }
+
+  .legal-list {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .legal-footnote {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .legal-card {
+      padding: 30px 20px;
+    }
+
+    .legal-heading {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .legal-card {
+      padding: 25px 15px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .legal-card,
+    .legal-section {
+      animation: simpleFadeIn 0.5s ease forwards;
+      transform: none;
+    }
+
+    @keyframes simpleFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+</style>

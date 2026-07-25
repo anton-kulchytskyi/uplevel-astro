@@ -3,7 +3,7 @@ import linksData from '@/data/navigation.json';
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
-const allLinks = [...linksData.main, ...linksData.services];
+const allLinks = [...linksData.main, ...linksData.services, ...linksData.legal];
 
 function findPageInfo(url: string) {
   return allLinks.find((link) => {

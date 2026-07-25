@@ -28,6 +28,15 @@ const currentYear = new Date().getFullYear();
       <FooterAddress />
       <div class="footer-copyright">
         <p>© {currentYear} Uplevel Restoration. All rights reserved.</p>
+        <p class="footer-legal">
+          {
+            linksData.legal.map((link) => (
+              <a href={link.url} class="footer-legal-link">
+                {link.title}
+              </a>
+            ))
+          }
+        </p>
       </div>
     </div>
   </div>
@@ -139,6 +148,23 @@ const currentYear = new Date().getFullYear();
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     margin: 0;
+  }
+
+  .footer-copyright .footer-legal {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-legal-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-legal-link:hover {
+    color: var(--color-white);
+    text-decoration: underline;
   }
 
   .footer-social {

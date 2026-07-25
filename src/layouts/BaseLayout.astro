@@ -24,6 +24,8 @@ export interface SeoData {
   ogType?: string;
   ogUrl?: string;
   ogImage?: string;
+  /** Keeps a page out of search results — used for drafts awaiting sign-off. */
+  noindex?: boolean;
 }
 
 export interface Props {
@@ -43,6 +45,7 @@ const { seoData, showBreadcrumbs = true } = Astro.props;
     <title>{seoData.title}</title>
     <meta name="description" content={seoData.description} />
     <meta name="keywords" content={seoData.keywords} />
+    {seoData.noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={seoData.ogTitle ?? seoData.title} />
     <meta
       property="og:description"
