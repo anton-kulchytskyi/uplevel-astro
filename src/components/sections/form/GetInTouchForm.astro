@@ -115,7 +115,7 @@ const { data } = Astro.props;
         } else {
           alert('Error: ' + data.message);
         }
-      } catch (error) {
+      } catch {
         alert('Something went wrong. Please try again.');
       } finally {
         submitBtn.textContent = originalText;

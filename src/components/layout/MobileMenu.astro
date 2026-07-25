@@ -301,8 +301,7 @@ import SocialButtons from '@/components/ui/SocialButtons.astro';
     mobileMenuOverlay?.classList.remove('active');
   }
 
-  openServicesMenu?.addEventListener('click', (e) => {
-    // e.preventDefault();
+  openServicesMenu?.addEventListener('click', () => {
     openSubmenu();
     openServicesMenu.setAttribute('aria-expanded', 'true');
   });
