@@ -25,9 +25,9 @@
     {
       "title": "Who we are",
       "paragraphs": [
-        "[LEGAL COMPANY NAME — e.g. \"Uplevel Corp.\" or the exact registered entity] operates this website and is responsible for the personal information described here.",
-        "Mailing address: [FULL BUSINESS ADDRESS — CONFIRM]",
-        "Privacy contact: uplevel@uplevelcorp.ca — [CONFIRM whether a different address should receive privacy requests]"
+        "Uplevel Restoration Corp. operates this website and is responsible for the personal information described here.",
+        "Mailing address: #1-702 45th Street West, Saskatoon, SK, Canada",
+        "Privacy contact: uplevel@uplevelcorp.ca"
       ]
     },
     {
@@ -69,9 +69,9 @@
         "Web3Forms — delivers contact form submissions to our email. Everything you enter in the form passes through and is stored on their systems.",
         "hCaptcha (Intuition Machines, Inc.) — spam protection on the contact form. It receives technical information about your device and browsing behaviour to tell humans from bots.",
         "Google Ads (Google LLC) — advertising and conversion measurement. It records that a form submission happened and, where cookies allow, connects it to an ad you clicked. The form's contents are not sent to Google.",
-        "[WEB HOSTING PROVIDER — CONFIRM name; the host stores the website files and server logs]"
+        "HOSTIQ — web hosting. It stores the website files and standard server logs, which include visitor IP addresses."
       ],
-      "footnote": "These providers operate outside Canada, including in the United States, so your information may be stored or processed there and may be accessible to foreign authorities under the laws of those countries. [CONFIRM with the hosting provider where the site and its logs are actually stored.]"
+      "footnote": "These providers operate outside Canada — Web3Forms, hCaptcha and Google in the United States, and our hosting with HOSTIQ in Ukraine — so your information may be stored or processed there and may be accessible to foreign authorities under the laws of those countries."
     },
     {
       "title": "Cookies and advertising",
@@ -120,8 +120,8 @@
     {
       "title": "Contact us",
       "paragraphs": [
-        "Questions about this policy or about the information we hold: uplevel@uplevelcorp.ca or [PHONE — confirm which number handles privacy enquiries].",
-        "Uplevel Restoration, [FULL BUSINESS ADDRESS — CONFIRM]"
+        "Questions about this policy or about the information we hold: uplevel@uplevelcorp.ca or (306) 850-5955.",
+        "Uplevel Restoration Corp., #1-702 45th Street West, Saskatoon, SK, Canada"
       ]
     }
   ]
