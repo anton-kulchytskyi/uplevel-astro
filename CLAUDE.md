@@ -79,6 +79,6 @@ The contact form posts to **Web3Forms** (`api.web3forms.com/submit`) with the pu
 ## SEO conventions
 
 - `@astrojs/sitemap` generates `/sitemap-index.xml` from `site` in `astro.config.mjs`; `public/robots.txt` points at it.
-- `seoData.noindex` renders `<meta name="robots" content="noindex, nofollow">`. It exists for pages whose copy is still a draft awaiting client sign-off (currently `/privacy-policy`); such a page is still listed in the sitemap, so clear the flag as soon as the text is approved.
+- `seoData.noindex` renders `<meta name="robots" content="noindex, nofollow">`, for pages whose copy is still a draft awaiting sign-off. No page sets it today. Note that a flagged page is still listed in the sitemap, so clear the flag as soon as the text is approved.
 - `navigation.json` has three link arrays: `main` (header + footer), `services`, and `legal` (footer bottom row only). `Breadcrumbs` resolves titles from all three.
 - OG images and canonical URLs must be absolute. `BaseLayout` falls back to `https://uplevelcorp.ca${Astro.url.pathname}` and `/og-cover.png` when a page's JSON omits `ogUrl`/`ogImage`. **The domain is hardcoded in both `astro.config.mjs` (`site`) and `BaseLayout.astro`** — a domain change requires editing both, plus `robots.txt` and any absolute `ogUrl`/`ogImage` values in `src/data/*.json`.

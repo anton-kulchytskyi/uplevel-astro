@@ -7,8 +7,7 @@
     "ogDescription": "How Uplevel Restoration collects, uses, and protects personal information submitted through uplevelcorp.ca.",
     "ogType": "website",
     "ogUrl": "https://uplevelcorp.ca/privacy-policy/",
-    "ogImage": "https://uplevelcorp.ca/og-cover.png",
-    "noindex": true
+    "ogImage": "https://uplevelcorp.ca/og-cover.png"
   },
   "hero": {
     "title": "Privacy Policy",
@@ -16,7 +15,7 @@
     "backgroundImage": null,
     "showCta": false
   },
-  "lastUpdated": "[EFFECTIVE DATE — set on the day this is published]",
+  "lastUpdated": "July 26, 2026",
   "intro": [
     "This policy explains what personal information Uplevel Restoration collects through uplevelcorp.ca, why we collect it, who we share it with, and the choices you have. It applies to this website only — not to information you give us over the phone, by email, or on site during a restoration job.",
     "We follow Canada's Personal Information Protection and Electronic Documents Act (PIPEDA)."
@@ -56,9 +55,9 @@
         "To respond to your enquiry and provide the restoration services you ask about",
         "To contact you about an active or prospective job",
         "To protect the contact form from automated spam and abuse",
-        "To measure whether our advertising is reaching people who need our services",
-        "[CONFIRM: do you want to send follow-ups, newsletters, or promotional messages to people who submit the form? If yes, it must be stated here — and consent must be obtained.]"
-      ]
+        "To measure whether our advertising is reaching people who need our services"
+      ],
+      "footnote": "We do not use what you send through the form for marketing. Your enquiry goes to our inbox and stays there — we do not add you to mailing lists, and we do not upload your name, email, or phone number to advertising platforms. Our advertising measurement counts that an enquiry happened; it does not receive what you wrote."
     },
     {
       "title": "Service providers we share it with",
@@ -67,6 +66,7 @@
       ],
       "items": [
         "Web3Forms — delivers contact form submissions to our email. Everything you enter in the form passes through and is stored on their systems.",
+        "Google (Gmail) — the mailbox that receives those enquiries. Your message is stored there while we deal with it.",
         "hCaptcha (Intuition Machines, Inc.) — spam protection on the contact form. It receives technical information about your device and browsing behaviour to tell humans from bots.",
         "Google Ads (Google LLC) — advertising and conversion measurement. It records that a form submission happened and, where cookies allow, connects it to an ad you clicked. The form's contents are not sent to Google.",
         "HOSTIQ — web hosting. It stores the website files and standard server logs, which include visitor IP addresses."
@@ -84,7 +84,8 @@
     {
       "title": "How long we keep it",
       "paragraphs": [
-        "[RETENTION PERIOD — CONFIRM. For example: \"Enquiries that do not become jobs are deleted after 12 months. Records connected to completed work are kept for [X] years to meet insurance, warranty, and tax obligations.\" This should match what you actually do.]"
+        "Enquiries that do not lead to work are deleted within 12 months.",
+        "When an enquiry becomes a job, your contact details stay with that job's record — including the invoices held in our own customer management system — for seven years after the work is finished. We keep them that long because insurers, warranty claims, and tax rules can require the paperwork years after a restoration is complete. We delete them once that period ends."
       ]
     },
     {
